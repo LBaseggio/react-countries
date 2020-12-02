@@ -9,7 +9,7 @@ export default function CountryCard(props) {
     subregion,
     population,
     area,
-    languages,
+    // languages,
   } = props;
 
   return (

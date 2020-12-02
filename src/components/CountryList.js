@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
 import CountryCard from "./CountryCard";
+// import axios from "axios";
 
 export default class CountryList extends React.Component {
   state = {
@@ -21,8 +21,10 @@ export default class CountryList extends React.Component {
   };
 
   // fecthCountries = () => {
-  //   axios.get(`https://restcountries.eu/rest/v2/all`).then((response) => {
-  //     this.setState({ countries: response.data.countries });
+  //   axios
+  //     .get(`https://restcountries.eu/rest/v2/all`)
+  //     .then((response) => {
+  //     this.setState({ countries: response.data });
   //     console.log(response.data);
   //   });
   // };
