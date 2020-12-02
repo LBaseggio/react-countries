@@ -1,4 +1,5 @@
 import React from "react";
+import "./countryCard.css";
 
 export default function CountryCard(props) {
   const {
@@ -9,19 +10,21 @@ export default function CountryCard(props) {
     subregion,
     population,
     area,
-    // languages,
+    languages,
   } = props;
 
   return (
-    <section>
-      <p>{name}</p>
-      <p>{nativeName}</p>
-      <p>{capital}</p>
-      <p>{region}</p>
-      <p>{subregion}</p>
-      <p>{population}</p>
-      <p>{area}</p>
-      {/* <p>{languages}</p> */}
+    <section className="cardContainer">
+      <h2>Country: {name}</h2>
+      <h3>Native name: {nativeName}</h3>
+      <h3>
+        Capital: <em>{capital}</em>
+      </h3>
+      <h3>Region: {region}</h3>
+      <h3>Sub-Region: {subregion}</h3>
+      <h3>Population: {population}</h3>
+      <h3>Area: {area}km²</h3>
+      <p>Language: {languages[0].name}</p>
     </section>
   );
 }

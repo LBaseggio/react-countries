@@ -1,5 +1,6 @@
 import React from "react";
 import CountryCard from "./CountryCard";
+import "./countryList.css";
 // import axios from "axios";
 
 export default class CountryList extends React.Component {
@@ -31,10 +32,12 @@ export default class CountryList extends React.Component {
 
   render() {
     return (
-      <section>
-        {this.state.countries.map((countrie, index) => (
-          <CountryCard key={index} {...countrie} />
-        ))}
+      <section className="cardsGridContainer">
+        <div className="cardsGrid">
+          {this.state.countries.map((countrie, index) => (
+            <CountryCard key={index} {...countrie} />
+          ))}
+        </div>
       </section>
     );
   }
