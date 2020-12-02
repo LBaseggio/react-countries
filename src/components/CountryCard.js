@@ -19,7 +19,7 @@ export default function CountryCard(props) {
       <div className="flagContainer">
         <img src={flag} alt="" />
       </div>
-      <h2>Country: {name}</h2>
+      <h2>{name}</h2>
       <h3>Native name: {nativeName}</h3>
       <h3>
         Capital: <em>{capital}</em>
@@ -31,6 +31,7 @@ export default function CountryCard(props) {
       <div>
         <p>Language: {languages && languages[0].name}</p>
       </div>
+      <button onClick="handleDelete">DELETE</button>
     </section>
   );
 }

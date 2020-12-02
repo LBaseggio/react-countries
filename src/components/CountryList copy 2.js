@@ -6,9 +6,7 @@ import "./countryList.css";
 export default class CountryList extends React.Component {
   state = {
     countries: [],
-    selectedCountry: "Show All",
-    deleteCountry: false,
-    countrySearch: "",
+    selectedCountry: "",
   };
 
   componentDidMount() {
@@ -24,7 +22,6 @@ export default class CountryList extends React.Component {
       });
   };
 
-  // AXIOS
   // fecthCountries = () => {
   //   axios
   //     .get(`https://restcountries.eu/rest/v2/all`)
@@ -34,34 +31,9 @@ export default class CountryList extends React.Component {
   //   });
   // };
 
-  countrySearchHandler = (event) => {
-    this.setState({
-      countrySearch: event.target.value,
-    });
-  };
-
-  handleDelete = (event) => {
-    this.setState({ deleteCountry: !this.state.deleteCountry });
-  };
-
   render() {
     return (
       <section className="cardsGridContainer">
-        <div>
-          <input
-            type="text"
-            className="searchCountry"
-            placeholder="Search a country"
-            onChange={this.countrySearchHandler}
-          />
-          {this.state.countries
-            .filter((countryName) =>
-              countryName.name.includes(this.state.countrySearch)
-            )
-            .map((country) => (
-              <CountryCard {...country} />
-            ))}
-        </div>
         <label> Choose a Country: </label>
         <select
           className="select"
@@ -70,7 +42,7 @@ export default class CountryList extends React.Component {
             this.setState({ selectedCountry: event.target.value })
           }
         >
-          <option> Show All </option>
+          <option /* value={this.state.countries} */> Show All </option>
           {this.state.countries.map((country, index) => (
             <CountryCard key={index} {...country} />
           ))}
@@ -82,10 +54,9 @@ export default class CountryList extends React.Component {
             </option>
           ))}
         </select>
-        <button onClick="handleDelete">DELETE</button>
 
         <div id="cardsGrid">
-          {this.state.selectedCountry === "Show All" ? (
+          {this.state.selectedCountry === "" ? (
             this.state.countries.map((country, index) => (
               <CountryCard key={index} {...country} />
             ))
