@@ -16,9 +16,9 @@ export default function CountryCard(props) {
 
   return (
     <section className="cardContainer">
-      {/* <div>
+      <div className="flagContainer">
         <img src={flag} alt="" />
-      </div> */}
+      </div>
       <h2>Country: {name}</h2>
       <h3>Native name: {nativeName}</h3>
       <h3>
@@ -28,7 +28,9 @@ export default function CountryCard(props) {
       <h3>Sub-Region: {subregion}</h3>
       <h3>Population: {population}</h3>
       <h3>Area: {area}km²</h3>
-      {/* <p>Language: {languages[0].name}</p> */}
+      {/* <div>
+        <p>Language: {languages[0].name}</p>
+      </div> */}
     </section>
   );
 }

@@ -31,28 +31,20 @@ export default class CountryList extends React.Component {
   //   });
   // };
 
-  handleOnChange = (event) => {
-    this.setState({ countrySelectChange: !this.state.countrySelectChange });
-  };
-
   render() {
     return (
       <section className="cardsGridContainer">
         <label> Choose a Country: </label>
         <select
+          className="select"
           value={this.state.selectedCountry}
           onChange={(event) =>
             this.setState({ selectedCountry: event.target.value })
           }
         >
-          <option>Please select</option>
+          <option>select</option>
           {this.state.countries.map((country, index) => (
-            <option
-              value={country.name}
-              onChange={this.countrySelectChange}
-              key={index}
-              className="cardsGrid"
-            >
+            <option value={country.name} key={index} className="cardsGrid">
               {country.name}
             </option>
           ))}

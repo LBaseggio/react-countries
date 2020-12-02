@@ -1,13 +1,25 @@
 .cardContainer {
   width: 380px;
+  height: auto;
   padding: 1rem 1rem 1rem 2rem;
   flex-wrap: wrap;
   border-radius: 1rem;
   border: solid 2px #aaa;
-  background-color: #ccc;
+  background-color: #cccccc80;
   box-shadow: 1px 1px 1px #222;
 }
 
 .cardContainer h3 {
   font-weight: 500;
+}
+
+.flagContainer {
+  width: 350px;
+}
+
+.flagContainer img {
+  width: 350px;
+  padding: 10px;
+  justify-self: center;
+  margin: auto;
 }
