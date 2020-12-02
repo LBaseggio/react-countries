@@ -28,9 +28,9 @@ export default function CountryCard(props) {
       <h3>Sub-Region: {subregion}</h3>
       <h3>Population: {population}</h3>
       <h3>Area: {area}km²</h3>
-      {/* <div>
-        <p>Language: {languages[0].name}</p>
-      </div> */}
+      <div>
+        <p>Language: {languages && languages[0].name}</p>
+      </div>
     </section>
   );
 }

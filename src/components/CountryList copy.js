@@ -44,24 +44,16 @@ export default class CountryList extends React.Component {
         >
           <option>select</option>
           {this.state.countries.map((country, index) => (
-            <option value={country.name} key={index}>
+            <option value={country.name} key={index} className="cardsGrid">
               {country.name}
             </option>
           ))}
         </select>
-        <div id="cardsGrid">
-          {this.state.selectedCountry === "" ? (
-            this.state.countries.map((country, index) => (
-              <CountryCard key={index} {...country} />
-            ))
-          ) : (
-            <CountryCard
-              {...this.state.countries.find(
-                (country) => country.name === this.state.selectedCountry
-              )}
-            />
+        <CountryCard
+          {...this.state.countries.find(
+            (country) => country.name === this.state.selectedCountry
           )}
-        </div>
+        />
       </section>
     );
   }
