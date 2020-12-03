@@ -10,10 +10,7 @@ export default class CountryList extends React.Component {
     countrySearch: "",
     countryRegion: "Show All",
     deleteCountry: false,
-    // countriesMinusDeleted: [],
   };
-
-  // this.baseState = this.state
 
   componentDidMount() {
     this.fetchCountries();
@@ -115,6 +112,9 @@ export default class CountryList extends React.Component {
               </option>
             ))}
         </select>
+        <div>
+          <p> Filtered result {this.state.countries.length}</p>
+        </div>
 
         <div id="cardsGrid">
           {this.state.selectedCountry === "Show All" ? (
