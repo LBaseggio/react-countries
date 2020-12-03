@@ -65,6 +65,7 @@ export default class CountryList extends React.Component {
             type="text"
             className="searchCountry"
             placeholder="Search a country"
+            value={this.state.countrySearch}
             onChange={(event) =>
               this.setState({ countrySearch: event.target.value.toLowerCase() })
             }
@@ -112,8 +113,9 @@ export default class CountryList extends React.Component {
               </option>
             ))}
         </select>
+
         <div>
-          <p> Filtered result {this.state.countries.length}</p>
+          <p> Filter result {this.state.countries.length}</p>
         </div>
 
         <div id="cardsGrid">
