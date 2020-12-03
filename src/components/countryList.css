@@ -3,6 +3,13 @@ body {
   background-image: url("../Assets/cream-paper-1920x1080.png");
 }
 
+input {
+  height: 1.2rem;
+  width: 12rem;
+  border-radius: 0.3rem;
+  padding: 2px;
+}
+
 .cardsGridContainer {
   margin: 3rem;
 }

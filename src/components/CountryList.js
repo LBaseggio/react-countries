@@ -10,10 +10,7 @@ export default class CountryList extends React.Component {
     countrySearch: "",
     countryRegion: "Show All",
     deleteCountry: false,
-    // countriesMinusDeleted: [],
   };
-
-  // this.baseState = this.state
 
   componentDidMount() {
     this.fetchCountries();
@@ -68,6 +65,7 @@ export default class CountryList extends React.Component {
             type="text"
             className="searchCountry"
             placeholder="Search a country"
+            value={this.state.countrySearch}
             onChange={(event) =>
               this.setState({ countrySearch: event.target.value.toLowerCase() })
             }
@@ -115,6 +113,10 @@ export default class CountryList extends React.Component {
               </option>
             ))}
         </select>
+
+        <div>
+          <p> Filter result {this.state.countries.length}</p>
+        </div>
 
         <div id="cardsGrid">
           {this.state.selectedCountry === "Show All" ? (
