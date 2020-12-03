@@ -38,7 +38,7 @@ export default function CountryCard(props) {
       <div>
         <p>Language: {languages && languages[0].name}</p>
       </div>
-      <button type="button" onClick={() => deleteCountry(name)}>
+      <button id="deleteButton" onClick={() => deleteCountry(name)}>
         Remove
       </button>
     </section>

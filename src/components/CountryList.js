@@ -9,25 +9,27 @@ export default class CountryList extends React.Component {
     selectedCountry: "Show All",
     countrySearch: "",
     countryRegion: "Show All",
-    // deleteCountry: false,
+    deleteCountry: false,
     // countriesMinusDeleted: [],
   };
 
+  // this.baseState = this.state
+
   componentDidMount() {
-    this.fecthCountries();
+    this.fetchCountries();
   }
 
-  fecthCountries = () => {
+  fetchCountries = () => {
     fetch(`https://restcountries.eu/rest/v2/all`)
       .then((response) => response.json())
       .then((response) => {
         this.setState({ countries: response });
-        // console.log(response);
+        console.log(response);
       });
   };
 
   // AXIOS
-  // fecthCountries = () => {
+  // fetchCountries = () => {
   //   axios
   //     .get(`https://restcountries.eu/rest/v2/all`)
   //     .then((response) => {
@@ -36,16 +38,29 @@ export default class CountryList extends React.Component {
   //   });
   // };
 
-  deleteCountryHandler = (event) => {
-    this.setState({ deleteCountry: !this.state.deleteCountry });
+  deleteCountryHandler = (name) => {
+    console.log(name);
+    const newCountryList = this.state.countries.filter(
+      (country) => country.name !== name
+    );
+    console.log(newCountryList);
+    this.setState({ countries: newCountryList });
   };
 
   render() {
     return (
       <section className="cardsGridContainer">
-        <button>
-          {/* countries: [], selectedCountry: "Show All", countrySearch: "",
-          countryRegion: "Show All", */}
+        <button
+          onClick={(event) =>
+            this.setState({
+              // countries: O MELHOR A FAZER PARA RESETAR E NÃO MENSIONAR COUNTRIES PORQUE J´A FOI MAPEADO EM COMPENTDIDMOUNT,
+              selectedCountry: "Show All",
+              countrySearch: "",
+              countryRegion: "Show All",
+            })
+          }
+        >
+          RESET
         </button>
 
         <div>
@@ -61,6 +76,7 @@ export default class CountryList extends React.Component {
 
         <div>
           <label> Filter by Region </label>
+
           <select
             onChange={(event) =>
               this.setState({ countryRegion: event.target.value })
@@ -76,6 +92,7 @@ export default class CountryList extends React.Component {
         </div>
 
         <label> Choose a Country: </label>
+
         <select
           className="select"
           value={this.state.selectedCountry}
@@ -84,6 +101,7 @@ export default class CountryList extends React.Component {
           }
         >
           <option> Show All </option>
+
           <option disabled> -- Select -- </option>
           {this.state.countries
             .filter((countryRegion) =>
@@ -97,7 +115,7 @@ export default class CountryList extends React.Component {
               </option>
             ))}
         </select>
-        {/* <button onClick="handleDelete">DELETE</button> */}
+
         <div id="cardsGrid">
           {this.state.selectedCountry === "Show All" ? (
             this.state.countries
