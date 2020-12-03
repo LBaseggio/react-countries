@@ -1,5 +1,5 @@
 import React from "react";
-import CountryCard from "./CountryCard";
+import CountryCard from "../CountryCard";
 import "./countryList.css";
 // import axios from "axios";
 
@@ -8,7 +8,7 @@ export default class CountryList extends React.Component {
     countries: [],
     selectedCountry: "Show All",
     countrySearch: "",
-    countryRegion: "Show All",
+    countryRegion: "",
     // deleteCountry: false,
     // countriesMinusDeleted: [],
   };
@@ -36,27 +36,33 @@ export default class CountryList extends React.Component {
   //   });
   // };
 
-  deleteCountryHandler = (event) => {
+  countrySearchHandler = (event) => {
+    this.setState({
+      countrySearch: event.target.value,
+    });
+  };
+
+  handleDelete = (event) => {
     this.setState({ deleteCountry: !this.state.deleteCountry });
   };
 
   render() {
     return (
       <section className="cardsGridContainer">
-        <button>
-          {/* countries: [], selectedCountry: "Show All", countrySearch: "",
-          countryRegion: "Show All", */}
-        </button>
-
         <div>
           <input
             type="text"
             className="searchCountry"
             placeholder="Search a country"
-            onChange={(event) =>
-              this.setState({ countrySearch: event.target.value.toLowerCase() })
-            }
+            onChange={this.countrySearchHandler}
           />
+          {this.state.countries
+            .filter((countryName) =>
+              countryName.name.includes(this.state.countrySearch)
+            )
+            .map((country) => (
+              <CountryCard {...country} />
+            ))}
         </div>
 
         <div>
@@ -66,7 +72,6 @@ export default class CountryList extends React.Component {
               this.setState({ countryRegion: event.target.value })
             }
           >
-            <option> Show All </option>
             <option> Africa </option>
             <option> Americas </option>
             <option> Asia </option>
@@ -84,43 +89,31 @@ export default class CountryList extends React.Component {
           }
         >
           <option> Show All </option>
+          {this.state.countries.map((country, index) => (
+            <CountryCard key={index} {...country} />
+          ))}
+
           <option disabled> -- Select -- </option>
-          {this.state.countries
-            .filter((countryRegion) =>
-              this.state.countryRegion !== "Show All"
-                ? countryRegion.region === this.state.countryRegion
-                : countryRegion
-            )
-            .map((country, index) => (
-              <option value={country.name} key={index}>
-                {country.name}
-              </option>
-            ))}
+          {this.state.countries.map((country, index) => (
+            <option value={country.name} key={index}>
+              {country.name}
+            </option>
+          ))}
         </select>
         {/* <button onClick="handleDelete">DELETE</button> */}
         <div id="cardsGrid">
           {this.state.selectedCountry === "Show All" ? (
             this.state.countries
-              .filter((countryName) =>
-                this.state.countrySearch !== ""
-                  ? countryName.name
-                      .toLowerCase()
-                      .includes(this.state.countrySearch)
-                  : countryName
+              .filter(
+                (countryRegion) =>
+                  countryRegion.region === this.state.countryRegion
               )
-              .map((country, index) => (
-                <CountryCard
-                  key={index}
-                  {...country}
-                  deleteCountry={this.deleteCountryHandler}
-                />
-              ))
+              .map((country, index) => <CountryCard key={index} {...country} />)
           ) : (
             <CountryCard
               {...this.state.countries.find(
                 (country) => country.name === this.state.selectedCountry
               )}
-              deleteCountry={this.deleteCountryHandler}
             />
           )}
         </div>

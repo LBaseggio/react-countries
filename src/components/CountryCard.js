@@ -12,7 +12,14 @@ export default function CountryCard(props) {
     area,
     languages,
     flag,
+    deleteCountry,
   } = props;
+
+  // const [list, setList] = React.useState(initialList);
+  // function handleRemove(id) {
+  //   const countriesMinusDeleted = list.filter((item) => item.id !== id);
+  //   setList(countriesMinusDeleted);
+  // }
 
   return (
     <section className="cardContainer">
@@ -31,7 +38,9 @@ export default function CountryCard(props) {
       <div>
         <p>Language: {languages && languages[0].name}</p>
       </div>
-      <button onClick="handleDelete">DELETE</button>
+      <button type="button" onClick={() => deleteCountry(name)}>
+        Remove
+      </button>
     </section>
   );
 }
