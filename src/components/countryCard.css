@@ -1,0 +1,38 @@
+.cardContainer {
+  width: 380px;
+  height: auto;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 1rem;
+  border: solid 2px #aaa;
+  /* background-color: #cccccc80; */
+  background-color: #ffffff;
+  background-image: url("../Assets/brushed-alum.png");
+  box-shadow: 1px 1px 1px #222;
+}
+
+.cardContainer h3 {
+  font-weight: 500;
+}
+
+.flagContainer {
+  width: 350px;
+}
+
+.flagContainer img {
+  width: 350px;
+  padding: 10px;
+  justify-self: center;
+  margin: auto;
+  box-shadow: 2px 2px 5px 1px #66666670;
+}
+
+#deleteButton {
+  position: absolute;
+  bottom: 30px;
+  right: 22px;
+  padding: 7px 20px;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px 1px #66666670;
+}
