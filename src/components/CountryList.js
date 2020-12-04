@@ -125,7 +125,7 @@ export default class CountryList extends React.Component {
                 this.state.countrySearch !== ""
                   ? countryName.name
                       .toLowerCase()
-                      .includes(this.state.countrySearch)
+                      /*.includes */ .startsWith(this.state.countrySearch)
                   : countryName
               )
               .map((country, index) => (
