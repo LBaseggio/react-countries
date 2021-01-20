@@ -10,6 +10,8 @@ body {
   padding: 10px;
   border-radius: 0.3rem;
   font-weight: bold;
+  font-size: 16px;
+  color: #090a17;
 }
 
 label,
@@ -38,7 +40,6 @@ select {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: solid 2px blue;
   padding: 0px 20px;
 }
 
@@ -52,10 +53,6 @@ select {
   grid-gap: 50px;
   justify-content: center;
 }
-
-/* .select {
-  margin: 1rem 1rem 2rem 1rem;
-} */
 
 .cardsGridContainer button {
   margin: 0 1rem 0 1rem;
