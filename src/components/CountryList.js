@@ -117,13 +117,13 @@ export default class CountryList extends React.Component {
           >
             RESET
           </button>
-          <div>
+          {/* <div>
             <p className="countries-displayed">
               {this.state.countrySearch === ""
                 ? `Countries diplayed: ${this.state.countries.length}`
                 : `Countries displayed: ${this.state.countrySearch.length}`}
             </p>
-          </div>
+          </div> */}
         </section>
 
         <div id="cardsGrid">

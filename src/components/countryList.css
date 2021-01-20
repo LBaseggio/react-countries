@@ -3,6 +3,15 @@ body {
   background-image: url("../Assets/cream-paper-1920x1080.png");
 }
 
+.selectorsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 20px;
+  margin: 0 0 20px 0;
+}
+
 .searchCountry {
   height: 1.4rem;
   width: 12rem;
@@ -33,14 +42,6 @@ select {
 .countries-displayed {
   font-weight: bold;
   margin: 1rem;
-}
-
-.selectorsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0px 20px;
 }
 
 .cardsGridContainer {
