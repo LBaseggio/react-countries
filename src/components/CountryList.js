@@ -47,76 +47,84 @@ export default class CountryList extends React.Component {
   render() {
     return (
       <section className="cardsGridContainer">
-        <button
-          onClick={(event) =>
-            this.setState({
-              // countries: O MELHOR A FAZER PARA RESETAR E NÃO MENSIONAR COUNTRIES PORQUE J´A FOI MAPEADO EM COMPENTDIDMOUNT,
-              selectedCountry: "Show All",
-              countrySearch: "",
-              countryRegion: "Show All",
-            })
-          }
-        >
-          RESET
-        </button>
+        <section className="selectorsContainer">
+          <div>
+            <input
+              type="text"
+              className="searchCountry"
+              placeholder="Search a country"
+              value={this.state.countrySearch}
+              onChange={(event) =>
+                this.setState({
+                  countrySearch: event.target.value.toLowerCase(),
+                })
+              }
+            />
+          </div>
 
-        <div>
-          <input
-            type="text"
-            className="searchCountry"
-            placeholder="Search a country"
-            value={this.state.countrySearch}
-            onChange={(event) =>
-              this.setState({ countrySearch: event.target.value.toLowerCase() })
-            }
-          />
-        </div>
+          <div className="filterByRegion">
+            <label> Filter by Region: </label>
 
-        <div>
-          <label> Filter by Region </label>
+            <select
+              onChange={(event) =>
+                this.setState({ countryRegion: event.target.value })
+              }
+            >
+              <option> Show All </option>
+              <option> Africa </option>
+              <option> Americas </option>
+              <option> Asia </option>
+              <option> Europe </option>
+              <option> Oceania </option>
+            </select>
+          </div>
 
-          <select
-            onChange={(event) =>
-              this.setState({ countryRegion: event.target.value })
+          <div className="chooseCountry">
+            <label> Choose a Country: </label>
+            <select
+              className="select"
+              value={this.state.selectedCountry}
+              onChange={(event) =>
+                this.setState({ selectedCountry: event.target.value })
+              }
+            >
+              <option> Show All </option>
+              <option disabled> -- Select -- </option>
+              {this.state.countries
+                .filter((countryRegion) =>
+                  this.state.countryRegion !== "Show All"
+                    ? countryRegion.region === this.state.countryRegion
+                    : countryRegion
+                )
+                .map((country, index) => (
+                  <option value={country.name} key={index}>
+                    {country.name}
+                  </option>
+                ))}
+            </select>
+          </div>
+
+          <button
+            className="resetButton"
+            onClick={(event) =>
+              this.setState({
+                // countries: O MELHOR A FAZER PARA RESETAR E NÃO MENSIONAR COUNTRIES PORQUE J´A FOI MAPEADO EM COMPENTDIDMOUNT,
+                selectedCountry: "Show All",
+                countrySearch: "",
+                countryRegion: "Show All",
+              })
             }
           >
-            <option> Show All </option>
-            <option> Africa </option>
-            <option> Americas </option>
-            <option> Asia </option>
-            <option> Europe </option>
-            <option> Oceania </option>
-          </select>
-        </div>
-
-        <label> Choose a Country: </label>
-
-        <select
-          className="select"
-          value={this.state.selectedCountry}
-          onChange={(event) =>
-            this.setState({ selectedCountry: event.target.value })
-          }
-        >
-          <option> Show All </option>
-
-          <option disabled> -- Select -- </option>
-          {this.state.countries
-            .filter((countryRegion) =>
-              this.state.countryRegion !== "Show All"
-                ? countryRegion.region === this.state.countryRegion
-                : countryRegion
-            )
-            .map((country, index) => (
-              <option value={country.name} key={index}>
-                {country.name}
-              </option>
-            ))}
-        </select>
-
-        <div>
-          <p> Filter result {this.state.countries.length}</p>
-        </div>
+            RESET
+          </button>
+          <div>
+            <p className="countries-displayed">
+              {this.state.countrySearch === ""
+                ? `Countries diplayed: ${this.state.countries.length}`
+                : `Countries displayed: ${this.state.countrySearch.length}`}
+            </p>
+          </div>
+        </section>
 
         <div id="cardsGrid">
           {this.state.selectedCountry === "Show All" ? (

@@ -3,11 +3,43 @@ body {
   background-image: url("../Assets/cream-paper-1920x1080.png");
 }
 
-input {
-  height: 1.2rem;
+.searchCountry {
+  height: 1.4rem;
   width: 12rem;
+  margin: 1rem 1rem;
+  padding: 10px;
   border-radius: 0.3rem;
-  padding: 2px;
+  font-weight: bold;
+}
+
+label,
+select {
+  height: 2rem;
+  width: auto;
+  /* margin: 1rem; */
+  font-weight: bold;
+}
+
+.chooseCountry {
+  margin: 0 1rem;
+}
+
+.filterByRegion {
+  margin: 0 1rem;
+}
+
+.countries-displayed {
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.selectorsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: solid 2px blue;
+  padding: 0px 20px;
 }
 
 .cardsGridContainer {
@@ -21,12 +53,12 @@ input {
   justify-content: center;
 }
 
-.select {
+/* .select {
   margin: 1rem 1rem 2rem 1rem;
-}
+} */
 
 .cardsGridContainer button {
-  margin: 0 1rem 0 0;
+  margin: 0 1rem 0 1rem;
   border-radius: 1rem;
   padding: 7px 20px;
   box-shadow: 2px 2px 5px 1px #66666670;
@@ -39,8 +71,4 @@ input {
 
 .cardsGridContainer button:active {
   transform: translateY(2px) translateX(1px);
-}
-
-.searchCountry {
-  margin: 1rem 0;
 }
