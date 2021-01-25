@@ -23,6 +23,14 @@ body {
   color: #090a17;
 }
 
+.filterByRegion {
+  min-width: 240px;
+}
+
+.chooseCountry {
+  min-width: 510px;
+}
+
 label,
 select {
   height: 2rem;
