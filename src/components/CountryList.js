@@ -69,13 +69,14 @@ export default class CountryList extends React.Component {
               onChange={(event) =>
                 this.setState({ countryRegion: event.target.value })
               }
+              value={this.state.countryRegion}
             >
-              <option> Show All </option>
-              <option> Africa </option>
-              <option> Americas </option>
-              <option> Asia </option>
-              <option> Europe </option>
-              <option> Oceania </option>
+              <option value="Show All"> Show All </option>
+              <option value="Africa"> Africa </option>
+              <option value="Americas"> Americas </option>
+              <option value="Asia"> Asia </option>
+              <option value="Europe"> Europe </option>
+              <option value="Oceania"> Oceania </option>
             </select>
           </div>
 
@@ -91,10 +92,11 @@ export default class CountryList extends React.Component {
               <option> Show All </option>
               <option disabled> -- Select -- </option>
               {this.state.countries
-                .filter((countryRegion) =>
+                .filter((countryFilteredByRegion) =>
                   this.state.countryRegion !== "Show All"
-                    ? countryRegion.region === this.state.countryRegion
-                    : countryRegion
+                    ? countryFilteredByRegion.region ===
+                      this.state.countryRegion
+                    : countryFilteredByRegion
                 )
                 .map((country, index) => (
                   <option value={country.name} key={index}>
@@ -135,6 +137,11 @@ export default class CountryList extends React.Component {
                       .toLowerCase()
                       /*.includes */ .startsWith(this.state.countrySearch)
                   : countryName
+              )
+              .filter((countryFilteredByRegion) =>
+                this.state.countryRegion !== "Show All"
+                  ? countryFilteredByRegion.region === this.state.countryRegion
+                  : countryFilteredByRegion
               )
               .map((country, index) => (
                 <CountryCard
