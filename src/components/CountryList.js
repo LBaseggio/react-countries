@@ -10,7 +10,6 @@ export default class CountryList extends React.Component {
     countrySearch: "",
     countryRegion: "Show All",
     deleteCountry: false,
-    counter: 0,
   };
 
   componentDidMount() {
@@ -110,7 +109,6 @@ export default class CountryList extends React.Component {
             className="resetButton"
             onClick={(event) =>
               this.setState({
-                // countries: O MELHOR A FAZER PARA RESETAR E NÃO MENSIONAR COUNTRIES PORQUE J´A FOI MAPEADO EM COMPENTDIDMOUNT,
                 selectedCountry: "Show All",
                 countrySearch: "",
                 countryRegion: "Show All",
@@ -120,37 +118,39 @@ export default class CountryList extends React.Component {
             RESET
           </button>
         </section>
-
-        <div id="cardsGrid">
-          {this.state.selectedCountry === "Show All" ? (
-            this.state.countries
-              .filter((countryName) =>
-                this.state.countrySearch !== ""
-                  ? countryName.name
-                      .toLowerCase()
-                      /*.includes */ .startsWith(this.state.countrySearch)
-                  : countryName
-              )
-              .filter((countryFilteredByRegion) =>
-                this.state.countryRegion !== "Show All"
-                  ? countryFilteredByRegion.region === this.state.countryRegion
-                  : countryFilteredByRegion
-              )
-              .map((country, index) => (
-                <CountryCard
-                  key={index}
-                  {...country}
-                  deleteCountry={this.deleteCountryHandler}
-                />
-              ))
-          ) : (
-            <CountryCard
-              {...this.state.countries.find(
-                (country) => country.name === this.state.selectedCountry
-              )}
-              deleteCountry={this.deleteCountryHandler}
-            />
-          )}
+        <div className="cards-container">
+          <div id="cards-grid">
+            {this.state.selectedCountry === "Show All" ? (
+              this.state.countries
+                .filter((countryName) =>
+                  this.state.countrySearch !== ""
+                    ? countryName.name
+                        .toLowerCase()
+                        /*.includes */ .startsWith(this.state.countrySearch)
+                    : countryName
+                )
+                .filter((countryFilteredByRegion) =>
+                  this.state.countryRegion !== "Show All"
+                    ? countryFilteredByRegion.region ===
+                      this.state.countryRegion
+                    : countryFilteredByRegion
+                )
+                .map((country, index) => (
+                  <CountryCard
+                    key={index}
+                    {...country}
+                    deleteCountry={this.deleteCountryHandler}
+                  />
+                ))
+            ) : (
+              <CountryCard
+                {...this.state.countries.find(
+                  (country) => country.name === this.state.selectedCountry
+                )}
+                deleteCountry={this.deleteCountryHandler}
+              />
+            )}
+          </div>
         </div>
       </section>
     );

@@ -6,7 +6,7 @@ body {
 }
 
 .grand-container {
-  margin: 3rem;
+  width: 100vw;
 }
 
 .grand-container button {
@@ -26,21 +26,22 @@ body {
 }
 
 .filters-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0px 20px;
-  margin: 0 0 20px 0;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100vw;
+  height: 50px;
+  margin: 0px 0px 70px 0px;
+  padding: 20px;
   background-color: #ffffff;
   background-image: url("../Assets/binding-light-1920x1080.png");
-  border-radius: 22px;
 }
 
 .searchCountry {
+  display: block;
+  float: left;
   height: 1.4rem;
   width: 12rem;
-  margin: 1rem 1rem;
   padding: 10px;
   border-radius: 0.3rem;
   font-weight: bold;
@@ -58,28 +59,38 @@ body {
 
 label,
 select {
+  display: block;
+  float: left;
   height: 2rem;
   width: auto;
-  /* margin: 1rem; */
   font-weight: bold;
 }
 
 .chooseCountry {
+  display: block;
+  float: left;
   margin: 0 1rem;
 }
 
 .filterByRegion {
+  display: block;
+  float: left;
   margin: 0 1rem;
 }
 
-.countries-displayed {
+/* .countries-displayed {
   font-weight: bold;
   margin: 1rem;
+} */
+
+.cards-container {
+  margin: 3rem;
 }
 
-#cardsGrid {
+#cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 50px;
   justify-content: center;
+  margin: 120px 0px 50px 0px;
 }
