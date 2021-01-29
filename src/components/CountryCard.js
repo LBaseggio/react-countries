@@ -27,20 +27,25 @@ export default function CountryCard(props) {
         <img src={flag} alt="" />
       </div>
       <h2>{name}</h2>
-      <h3>Native name: {nativeName}</h3>
-      <h3>
+      <h5>Native name: {nativeName}</h5>
+      <h5>
         Capital: <em>{capital}</em>
-      </h3>
-      <h3>Region: {region}</h3>
-      <h3>Sub-Region: {subregion}</h3>
-      <h3>Population: {population}</h3>
-      <h3>Area: {area}km²</h3>
+      </h5>
+      <h5>Region: {region}</h5>
+      <h5>Sub-Region: {subregion}</h5>
+      <h5>Population: {population}</h5>
+      <h5>Area: {area}km²</h5>
       <div>
-        <p>Language: {languages && languages[0].name}</p>
+        <h5>Language: {languages && languages[0].name}</h5>
       </div>
-      <button id="deleteButton" onClick={() => deleteCountry(name)}>
-        Remove
-      </button>
+      <div className="buttons-container">
+        <button className="button" onClick={() => deleteCountry(name)}>
+          Remove
+        </button>
+        <button className="button" onClick={() => deleteCountry(name)}>
+          Favorite
+        </button>
+      </div>
     </section>
   );
 }

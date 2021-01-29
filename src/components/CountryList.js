@@ -10,6 +10,7 @@ export default class CountryList extends React.Component {
     countrySearch: "",
     countryRegion: "Show All",
     deleteCountry: false,
+    counter: 0,
   };
 
   componentDidMount() {
@@ -43,11 +44,10 @@ export default class CountryList extends React.Component {
     console.log(newCountryList);
     this.setState({ countries: newCountryList });
   };
-
   render() {
     return (
-      <section className="cardsGridContainer">
-        <section className="selectorsContainer">
+      <section className="grand-container">
+        <section className="filters-container">
           <div>
             <input
               type="text"
@@ -119,13 +119,6 @@ export default class CountryList extends React.Component {
           >
             RESET
           </button>
-          {/* <div>
-            <p className="countries-displayed">
-              {this.state.countrySearch === ""
-                ? `Countries diplayed: ${this.state.countries.length}`
-                : `Countries displayed: ${this.state.countrySearch.length}`}
-            </p>
-          </div> */}
         </section>
 
         <div id="cardsGrid">
@@ -163,3 +156,8 @@ export default class CountryList extends React.Component {
     );
   }
 }
+
+// add to favorite
+// order by population name
+// order by size
+//

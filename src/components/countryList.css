@@ -5,7 +5,27 @@ body {
   background-image: url("../Assets/3px-tile.png");
 }
 
-.selectorsContainer {
+.grand-container {
+  margin: 3rem;
+}
+
+.grand-container button {
+  margin: 0 1rem 0 1rem;
+  border-radius: 1rem;
+  padding: 7px 20px;
+  box-shadow: 2px 2px 5px 1px #66666670;
+}
+
+.grand-container button:hover {
+  cursor: grab;
+  /* transition: 0.01s; */
+}
+
+.grand-container button:active {
+  transform: translateY(2px) translateX(1px);
+}
+
+.filters-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,29 +77,9 @@ select {
   margin: 1rem;
 }
 
-.cardsGridContainer {
-  margin: 3rem;
-}
-
 #cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 50px;
   justify-content: center;
-}
-
-.cardsGridContainer button {
-  margin: 0 1rem 0 1rem;
-  border-radius: 1rem;
-  padding: 7px 20px;
-  box-shadow: 2px 2px 5px 1px #66666670;
-}
-
-.cardsGridContainer button:hover {
-  cursor: grab;
-  /* transition: 0.01s; */
-}
-
-.cardsGridContainer button:active {
-  transform: translateY(2px) translateX(1px);
 }
