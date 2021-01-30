@@ -3,7 +3,9 @@ import { CountriesContext } from "../contexts/CountriesContext";
 import "./countries.css";
 
 export default function CountryCard(props) {
-  const { countryDelete, countryFavorite } = React.useContext(CountriesContext);
+  const { addCountryToFavorites, removeCountryToFavorites } = React.useContext(
+    CountriesContext
+  );
 
   return (
     <section className="card-container">
@@ -23,12 +25,24 @@ export default function CountryCard(props) {
         <h5>Language: {props.languages && props.languages[0].name}</h5>
       </div>
       <div className="buttons-container">
-        <button className="button" onClick={() => countryDelete(props.name)}>
-          Remove
-        </button>
-        <button className="button" onClick={() => countryFavorite(props.name)}>
-          Favorite
-        </button>
+        {props.isRemoveCountryDisplayed ? (
+          <button
+            type="button"
+            className="button"
+            onClick={() => removeCountryToFavorites(props.name)}
+          >
+            Remove from Favorites
+          </button>
+        ) : null}
+        {props.isAddCountryDisplayed ? (
+          <button
+            type="button"
+            className="button"
+            onClick={() => addCountryToFavorites(props.name)}
+          >
+            Favorite
+          </button>
+        ) : null}
       </div>
     </section>
   );
