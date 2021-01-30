@@ -15,7 +15,11 @@ export default function CountryList() {
   });
 
   return (
-    <h1>Country List</h1>
+    <div>
+      <h1>Country List</h1>
+      {countries && countries.map((country) => <CountryCard {...country} />)}
+    </div>
+
     // <section className="grand-container">
     //   <section className="filters-container">
     //     <div>

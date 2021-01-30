@@ -16,11 +16,9 @@ export default function CountriesContextProvider(props) {
 
   const deleteCountryHandler = (name) => {
     console.log(name);
-    const newCountryList = this.state.countries.filter(
-      (country) => country.name !== name
-    );
+    const newCountryList = countries.filter((country) => country.name !== name);
     console.log(newCountryList);
-    this.setState({ countries: newCountryList });
+    setCountries({ countries: newCountryList });
   };
 
   return (
