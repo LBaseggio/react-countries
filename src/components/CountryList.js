@@ -17,22 +17,6 @@ export default function CountryList() {
   return (
     <>
       <section className="grand-container">
-        <section>
-          {countriesFavoriteList.length ? (
-            <div>
-              <span>
-                <h3>Favorite Countries</h3>
-                {countriesFavoriteList.map((country, index) => (
-                  <CountryCard
-                    {...country}
-                    key={index}
-                    isRemoveCountryDisplayed
-                  />
-                ))}
-              </span>
-            </div>
-          ) : null}
-        </section>
         <section className="filters-container">
           <div>
             <input
@@ -107,7 +91,24 @@ export default function CountryList() {
           </button>
         </section>
         <div className="cards-container">
-          <div id="cards-grid">
+          {countriesFavoriteList.length ? (
+            <section className="favorite-cards-grid">
+              <div>
+                <span>
+                  <h3>Favorite Countries</h3>
+                  {countriesFavoriteList.map((country, index) => (
+                    <CountryCard
+                      {...country}
+                      key={index}
+                      isRemoveCountryDisplayed
+                    />
+                  ))}
+                </span>
+              </div>
+            </section>
+          ) : null}
+
+          <div className="cards-grid">
             {state.selectedCountry === "Show All" ? (
               countries &&
               countries

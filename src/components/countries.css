@@ -86,10 +86,28 @@ select {
   margin: 3rem;
 }
 
-#cards-grid {
+.favorite-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 50px;
+  /* justify-content: center; */
+  margin: 160px 0px 50px 0px;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px #333;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.favorite-cards-grid h3 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px 10px 10px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 150px 30px;
   justify-content: center;
   margin: 160px 0px 50px 0px;
 }
@@ -101,7 +119,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 340px;
+  width: 300px;
   height: auto;
   flex-wrap: wrap;
   border-radius: 5px 5px 20px 20px;

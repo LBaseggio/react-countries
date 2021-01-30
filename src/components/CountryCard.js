@@ -31,7 +31,7 @@ export default function CountryCard(props) {
             className="button"
             onClick={() => removeCountryToFavorites(props.name)}
           >
-            Remove from Favorites
+            Remove
           </button>
         ) : null}
         {props.isAddCountryDisplayed ? (
@@ -43,6 +43,13 @@ export default function CountryCard(props) {
             Favorite
           </button>
         ) : null}
+        <button
+          type="button"
+          className="button"
+          // onClick={() => enlarge(props.name)}
+        >
+          Enlarge
+        </button>
       </div>
     </section>
   );
