@@ -1,48 +1,32 @@
 import React from "react";
+import { CountriesContext } from "../contexts/CountriesContext";
 import "./countries.css";
 
 export default function CountryCard(props) {
-  const {
-    name,
-    nativeName,
-    capital,
-    region,
-    subregion,
-    population,
-    area,
-    languages,
-    flag,
-    deleteCountry,
-  } = props;
-
-  // const [list, setList] = React.useState(initialList);
-  // function handleRemove(id) {
-  //   const countriesMinusDeleted = list.filter((item) => item.id !== id);
-  //   setList(countriesMinusDeleted);
-  // }
+  const { deleteCountryHandler } = React.useContext(CountriesContext);
 
   return (
     <section className="card-container">
       <div className="flag-container">
-        <img src={flag} alt="" />
+        <img src={props.flag} alt="" />
       </div>
-      <h2>{name}</h2>
-      <h5>Native name: {nativeName}</h5>
+      <h2>{props.name}</h2>
+      <h5>Native name: {props.nativeName}</h5>
       <h5>
-        Capital: <em>{capital}</em>
+        Capital: <em>{props.capital}</em>
       </h5>
-      <h5>Region: {region}</h5>
-      <h5>Sub-Region: {subregion}</h5>
-      <h5>Population: {population}</h5>
-      <h5>Area: {area}km²</h5>
+      <h5>Region: {props.region}</h5>
+      <h5>Sub-Region: {props.subregion}</h5>
+      <h5>Population: {props.population}</h5>
+      <h5>Area: {props.area}km²</h5>
       <div>
-        <h5>Language: {languages && languages[0].name}</h5>
+        <h5>Language: {props.languages && props.languages[0].name}</h5>
       </div>
       <div className="buttons-container">
-        <button className="button" onClick={() => deleteCountry(name)}>
+        <button className="button" onClick={deleteCountryHandler}>
           Remove
         </button>
-        <button className="button" onClick={() => deleteCountry(name)}>
+        <button className="button" onClick={deleteCountryHandler}>
           Favorite
         </button>
       </div>

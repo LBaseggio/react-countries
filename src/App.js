@@ -1,12 +1,13 @@
 import React from "react";
+import CountriesContextProvider from "./contexts/CountriesContext";
 import CountryList from "./components/CountryList";
+// import CountryCard from "./components/CountryCard";
 
-function App() {
+export default function App() {
   return (
-    <div>
+    <CountriesContextProvider>
       <CountryList />
-    </div>
+      {/* <CountryCard /> */}
+    </CountriesContextProvider>
   );
 }
-
-export default App;
