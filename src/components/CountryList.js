@@ -106,7 +106,7 @@ export default class CountryList extends React.Component {
           </div>
 
           <button
-            className="resetButton"
+            id="reset-button"
             onClick={(event) =>
               this.setState({
                 selectedCountry: "Show All",

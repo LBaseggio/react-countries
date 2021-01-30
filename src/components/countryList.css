@@ -1,8 +1,6 @@
 body {
-  /* background-color: #ffffff; */
-  /* background-image: url("../Assets/binding-light-1920x1080.png"); */
   background-color: #696969;
-  background-image: url("../Assets/3px-tile.png");
+  background-image: url("../Assets/bright-squares.png");
 }
 
 .grand-container {
@@ -31,17 +29,19 @@ body {
   top: 0; /* Position the navbar at the top of the page */
   width: 100vw;
   height: 50px;
-  margin: 0px 0px 70px 0px;
+  margin: 0px 0px 90px 0px;
   padding: 20px;
-  background-color: #ffffff;
-  background-image: url("../Assets/binding-light-1920x1080.png");
+  box-shadow: 3px 3px 3px #22222280;
+  background-color: #8c8c8c;
+  background-image: url("../Assets/bright-squares.png");
 }
 
 .searchCountry {
   display: block;
   float: left;
+  width: 13rem;
   height: 1.4rem;
-  width: 12rem;
+  margin: 0px 20px 0px 20px;
   padding: 10px;
   border-radius: 0.3rem;
   font-weight: bold;
@@ -50,38 +50,32 @@ body {
 }
 
 .filterByRegion {
+  display: block;
+  float: left;
   min-width: 240px;
+  padding: 10px;
+  margin: 0px 20px 0px 20px;
 }
 
 .chooseCountry {
+  display: block;
+  float: left;
   min-width: 510px;
+  padding: 10px;
+  margin: 0px 20px 0px 20px;
 }
 
 label,
 select {
-  display: block;
-  float: left;
+  font-weight: bold;
   height: 2rem;
   width: auto;
-  font-weight: bold;
+  padding: 0 10px;
 }
 
-.chooseCountry {
-  display: block;
-  float: left;
-  margin: 0 1rem;
+#reset-button {
+  margin: 10px 20px 0px 20px;
 }
-
-.filterByRegion {
-  display: block;
-  float: left;
-  margin: 0 1rem;
-}
-
-/* .countries-displayed {
-  font-weight: bold;
-  margin: 1rem;
-} */
 
 .cards-container {
   margin: 3rem;
