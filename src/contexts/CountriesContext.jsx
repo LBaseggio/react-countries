@@ -14,8 +14,8 @@ export default function CountriesContextProvider(props) {
       });
   }, []);
 
-  const deleteCountryHandler = (name) => {
-    console.log(name);
+  const countryDelete = (name) => {
+    console.log("COUNTRYDELETE NAME COMING IN: ", name);
     const newCountryList = countries.filter((country) => country.name !== name);
     console.log(newCountryList);
     setCountries({ countries: newCountryList });
@@ -23,9 +23,10 @@ export default function CountriesContextProvider(props) {
 
   return (
     <CountriesContext.Provider
-      value={{ countries, setCountries, deleteCountryHandler }}
+      value={{ countries, setCountries, countryDelete }}
     >
       {props.children}
     </CountriesContext.Provider>
   );
 }
+  
