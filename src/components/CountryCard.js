@@ -1,5 +1,5 @@
 import React from "react";
-import "./countryCard.css";
+import "./countries.css";
 
 export default function CountryCard(props) {
   const {
@@ -22,8 +22,8 @@ export default function CountryCard(props) {
   // }
 
   return (
-    <section className="cardContainer">
-      <div className="flagContainer">
+    <section className="card-container">
+      <div className="flag-container">
         <img src={flag} alt="" />
       </div>
       <h2>{name}</h2>

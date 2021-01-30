@@ -40,13 +40,12 @@ body {
   display: block;
   float: left;
   width: 13rem;
-  height: 1.4rem;
-  margin: 0px 20px 0px 20px;
   padding: 10px;
+  margin: 7px 20px 0px 20px;
   border-radius: 0.3rem;
-  font-weight: bold;
-  font-size: 16px;
   color: #090a17;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .filterByRegion {
@@ -65,16 +64,21 @@ body {
   margin: 0px 20px 0px 20px;
 }
 
+#reset-button {
+  display: block;
+  float: left;
+  border-radius: 5px;
+
+  margin: 10px 20px 0px 20px;
+}
+
 label,
 select {
   font-weight: bold;
   height: 2rem;
   width: auto;
   padding: 0 10px;
-}
-
-#reset-button {
-  margin: 10px 20px 0px 20px;
+  border-radius: 5px;
 }
 
 .cards-container {
@@ -86,5 +90,48 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 50px;
   justify-content: center;
-  margin: 120px 0px 50px 0px;
+  margin: 160px 0px 50px 0px;
+}
+
+/* ///////// CARD \\\\\\\\\ */
+
+.card-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 340px;
+  height: auto;
+  flex-wrap: wrap;
+  border-radius: 5px 5px 20px 20px;
+  background-color: #ffffff;
+  background-image: url("../Assets/brushed-alum.png");
+  box-shadow: 3px 3px 3px #222;
+}
+
+.card-container > h2,
+h5 {
+  font-weight: 500;
+  margin: 4px 0px 6px 20px;
+}
+
+.flag-container > img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: top;
+  margin: 0px 0px 8px 0px;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 2px 2px 5px 1px #66666670;
+}
+
+.buttons-container {
+  margin: 10px;
+  align-self: center;
+}
+
+.button {
+  padding: 7px 20px;
+  margin: 0 3px;
+  border-radius: 14px;
+  box-shadow: 2px 2px 5px 1px #66666670;
 }

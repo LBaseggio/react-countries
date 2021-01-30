@@ -1,6 +1,6 @@
 import React from "react";
 import CountryCard from "./CountryCard";
-import "./countryList.css";
+import "./countries.css";
 // import axios from "axios";
 
 export default class CountryList extends React.Component {
