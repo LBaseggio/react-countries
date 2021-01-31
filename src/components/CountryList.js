@@ -142,3 +142,11 @@ export default function CountryList() {
     </>
   );
 }
+
+{
+  /* .sort(function (countryA, countryB) { countryA.population - countryB.population }; */
+}
+
+//  .sort(function(countryA, countryB) => {
+//                 (countryA.population - countryB.population)
+//               }

@@ -22,6 +22,10 @@ export default function CountryCard(props) {
   //   setCountries(countryToSeeDetails);
   // }, []);
 
+  function numberWithSeparators(number) {
+    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+  }
+
   return (
     <section className="card-container">
       <div className="flag-container">
@@ -32,8 +36,8 @@ export default function CountryCard(props) {
       <h5>Capital: {props.capital}</h5>
       <h5>Region: {props.region}</h5>
       <h5>Sub-Region: {props.subregion}</h5>
-      <h5>Population: {props.population}</h5>
-      <h5>Area: {props.area}km²</h5>
+      <h5>Population: {numberWithSeparators(props.population)}</h5>
+      {/* <h5>Area: {numberWithSeparators(props.area)}km²</h5> */}
       <h5>Language: {props.languages && props.languages[0].name}</h5>
       <div className="buttons-container">
         {props.isRemoveCountryDisplayed ? (
