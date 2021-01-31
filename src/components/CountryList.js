@@ -19,7 +19,8 @@ export default function CountryList() {
   return (
     <>
       <section className="grand-container">
-        <section className="filters-container">
+        {/* /////////////////////////   FILTERS TOP   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+        <section className="filters-container-top">
           <div>
             <input
               type="text"
@@ -34,9 +35,9 @@ export default function CountryList() {
               }
             />
           </div>
+
           <div className="filterByRegion">
             <label> Filter by Region: </label>
-
             <select
               onChange={(event) =>
                 setState({ ...state, countryRegion: event.target.value })
@@ -51,6 +52,7 @@ export default function CountryList() {
               <option value="Oceania"> Oceania </option>
             </select>
           </div>
+
           <div className="chooseCountry">
             <label> Choose a Country: </label>
             <select
@@ -77,6 +79,24 @@ export default function CountryList() {
             </select>
           </div>
           <button
+            id="button-reset"
+            type="button"
+            onClick={(event) =>
+              setState({
+                selectedCountry: "Show All",
+                countrySearch: "",
+                countryRegion: "Show All",
+              })
+            }
+          >
+            RESET
+          </button>
+        </section>
+        {/* /////////////////////////   FILTERS BOTTOM   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+
+        <section className="filters-container-bottom">
+          <button
+            id="button-big-population"
             type="button"
             onClick={(event) =>
               setState({
@@ -90,6 +110,7 @@ export default function CountryList() {
               : "MOST POPULATED COUNTRIES"}
           </button>
           <button
+            id="button-small-population"
             type="button"
             onClick={(event) =>
               setState({
@@ -102,21 +123,9 @@ export default function CountryList() {
               ? "ALL COUNTRIES"
               : "LEAST POPULATED COUNTRIES"}
           </button>
-
-          <button
-            id="reset-button"
-            type="button"
-            onClick={(event) =>
-              setState({
-                selectedCountry: "Show All",
-                countrySearch: "",
-                countryRegion: "Show All",
-              })
-            }
-          >
-            RESET
-          </button>
         </section>
+
+        {/* /////////////////////////   MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
         <div className="cards-container">
           {countriesFavoriteList.length ? (

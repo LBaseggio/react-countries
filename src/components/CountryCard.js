@@ -25,6 +25,7 @@ export default function CountryCard(props) {
   function numberWithSeparators(number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
   }
+  // toString().toLocaleString();
 
   return (
     <section className="card-container">

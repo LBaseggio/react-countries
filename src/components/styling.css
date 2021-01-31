@@ -7,8 +7,8 @@ body {
 
 #navbar-container {
   display: inline;
-  overflow: hidden;
   position: fixed;
+  overflow: hidden;
   width: 100vw;
   top: 0px;
   z-index: 2;
@@ -17,7 +17,7 @@ body {
   font-family: "Nunito", sans-serif;
   background-color: hsla(0, 0%, 55%, 0.925);
   background-image: url("../Assets/bright-squares.png");
-  box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5);
+  /* box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5); */
 }
 
 #navbar-text {
@@ -65,17 +65,45 @@ body {
 
 /* //////////    FILTERS   \\\\\\\\\\\\ */
 
-.filters-container {
-  overflow: hidden;
+.filters-container-top {
+  display: inline;
   position: fixed;
+  overflow: hidden;
   top: 120px;
   width: 100vw;
-  height: 50px;
   margin: 0px 0px 90px 0px;
   padding: 20px 3rem;
-  background-color: hsla(0, 0%, 55%, 0.925);
-  background-image: url("../Assets/bright-squares.png");
-  box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5);
+  background-color: lightgreen;
+  /* background-color: hsla(0, 0%, 55%, 0.925); */
+  /* background-image: url("../Assets/bright-squares.png"); */
+  /* height: 50px; */
+  /* box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5); */
+}
+
+.filters-container-bottom {
+  display: inline;
+  position: fixed;
+  overflow: hidden;
+  top: 210px;
+  width: 100vw;
+  padding: 20px 3rem;
+  background-color: lightblue;
+  /* background-color: hsla(0, 0%, 55%, 0.925); */
+  /* background-image: url("../Assets/bright-squares.png"); */
+  /* margin: 0px 0px 90px 0px; */
+  /* height: 50px; */
+  /* box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5); */
+}
+
+#button-reset,
+#button-big-population,
+#button-small-population {
+  float: left;
+  border: none;
+  display: block;
+  border-radius: 5px;
+  margin: 10px 20px 0px 20px;
+  box-shadow: none;
 }
 
 .searchCountry {
@@ -103,17 +131,10 @@ body {
 .chooseCountry {
   display: block;
   float: left;
-  min-width: 510px;
   padding: 10px;
   margin: 0px 20px 0px 20px;
   border: none;
-}
-
-#reset-button {
-  display: block;
-  float: left;
-  border-radius: 5px;
-  margin: 10px 20px 0px 20px;
+  /* min-width: 510px; */
 }
 
 label,
