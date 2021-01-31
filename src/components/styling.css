@@ -33,6 +33,8 @@ body {
   height: 80px;
   margin: 20px 5px 5px 50px;
   opacity: 0.5;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%) contrast(180%);
 }
 
 /* //////////    COUNTRY LIST    \\\\\\\\\\\\ */
