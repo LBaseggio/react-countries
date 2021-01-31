@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, useHistory } from "../react-router-dom";
 import { CountriesContext } from "../contexts/CountriesContext";
+import { Link, useHistory } from "react-router-dom";
 
 export default function CountryDetails(props) {
   const [
@@ -10,16 +10,16 @@ export default function CountryDetails(props) {
     addCountryToFavorites,
   ] = React.useContext(CountriesContext);
 
-  const history = useHistory();
+  React.useEffect(() => {
+    const countryToFindName = props.match.params.name;
+    console.log(countryToFindName);
+    const countryToSeeDetails = countries.find(
+      (country) => country.name === countryToFindName
+    );
+    setCountries(countryToSeeDetails);
+  }, []);
 
-  // React.useEffect(() => {
-  //   const countryToFindName = Number(props.match.params.id);
-  //   console.log(countryToFindName);
-  //   const countryToSeeDetails = countries.find(
-  //     (country) => country.name === countryToFindName
-  //   );
-  //   setCountries(countryToSeeDetails);
-  // }, []);
+  const history = useHistory();
 
   return (
     <section>
@@ -27,7 +27,7 @@ export default function CountryDetails(props) {
       <div>
         <section className="card-container">
           <div className="flag-container">
-            <img src={props.flag} alt="" />
+            <img src={props.flag} alt="flag" />
           </div>
           <h2>{props.name}</h2>
           <h5>Native name: {props.nativeName}</h5>
@@ -63,9 +63,10 @@ export default function CountryDetails(props) {
                 history.push("/");
               }}
             >
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                 Return
-              </Link>
+              </Link> */}
+              Return
             </button>
           </div>
         </section>

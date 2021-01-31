@@ -25,7 +25,7 @@ export default function CountryCard(props) {
   return (
     <section className="card-container">
       <div className="flag-container">
-        <img src={props.flag} alt="" />
+        <img src={props.flag} alt="flag" />
       </div>
       <h2>{props.name}</h2>
       <h5>Native name: {props.nativeName}</h5>
