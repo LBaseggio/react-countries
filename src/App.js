@@ -13,7 +13,7 @@ export default function App() {
           <Switch>
             <CountryList />
             <Route exact path="/countries" component={CountryList} />
-            <Route path="/countries/details" component={CountryDetails} />
+            <Route path="/countries/name" component={CountryDetails} />
             <Redirect to="/countries" />
           </Switch>
         </BrowserRouter>

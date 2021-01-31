@@ -1,5 +1,6 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
+import { Link } from "react-router-dom";
 import "./styling.css";
 
 export default function CountryCard(props) {
@@ -41,13 +42,11 @@ export default function CountryCard(props) {
             Favorite
           </button>
         ) : null}
-        <button
-          type="button"
-          className="button"
-          // onClick={() => enlarge(props.name)}
-        >
-          Enlarge
-        </button>
+        <Link to={`/countries/${props.name}`}>
+          <button className="button-details" type="button">
+            Details
+          </button>
+        </Link>
       </div>
     </section>
   );
