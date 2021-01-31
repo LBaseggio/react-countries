@@ -6,7 +6,9 @@ body {
 /* //////////    NAVBAR    \\\\\\\\\\\\ */
 
 #navbar-container {
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   overflow: hidden;
   width: 100vw;
@@ -21,136 +23,92 @@ body {
 }
 
 #navbar-text {
-  float: left;
-  font-size: 45px;
+  font-size: 70px;
   font-weight: 700;
   letter-spacing: 4px;
-  margin: 35px 0px 0px 30px;
-  color: rgb(227, 227, 227);
-  text-shadow: 1px 1px 1px #3c3c3c;
+  margin: 0px 0px 0px 30px;
   font-family: "Permanent Marker", cursive;
+  text-shadow: 1px 1px 1px #3c3c3c;
+  color: rgb(227, 227, 227);
   /* text-transform: uppercase; */
 }
 
 .globe {
-  float: left;
   height: 80px;
-  margin: 20px 5px 5px 50px;
   opacity: 0.4;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%) contrast(150%) brightness(90%);
 }
 
-/* //////////    COUNTRY LIST    \\\\\\\\\\\\ */
-
-.grand-container {
-  width: 100vw;
-  font-family: "Nunito", sans-serif;
-}
-
-.grand-container button {
-  margin: 0 1rem 0 1rem;
-  border-radius: 1rem;
-  padding: 7px 20px;
-  box-shadow: 2px 2px 5px 1px #66666670;
-}
-
-.grand-container button:hover {
-  cursor: grab;
-}
-
-.grand-container button:active {
-  transform: translateY(2px) translateX(1px);
-}
-
 /* //////////    FILTERS   \\\\\\\\\\\\ */
 
-.filters-container-top {
-  display: inline;
+.filters-container {
   position: fixed;
-  overflow: hidden;
   top: 120px;
   width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-self: center;
+  flex-wrap: wrap;
+  overflow: visible;
   margin: 0px 0px 90px 0px;
   padding: 20px 3rem;
-  background-color: lightgreen;
-  /* background-color: hsla(0, 0%, 55%, 0.925); */
-  /* background-image: url("../Assets/bright-squares.png"); */
-  /* height: 50px; */
-  /* box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5); */
-}
-
-.filters-container-bottom {
-  display: inline;
-  position: fixed;
-  overflow: hidden;
-  top: 210px;
-  width: 100vw;
-  padding: 20px 3rem;
-  background-color: lightblue;
-  /* background-color: hsla(0, 0%, 55%, 0.925); */
-  /* background-image: url("../Assets/bright-squares.png"); */
-  /* margin: 0px 0px 90px 0px; */
-  /* height: 50px; */
-  /* box-shadow: 3px 3px 3px hsla(0, 0%, 13%, 0.5); */
+  background-color: hsla(0, 0%, 55%, 0.925);
+  background-image: url("../Assets/bright-squares.png");
 }
 
 #button-reset,
 #button-big-population,
 #button-small-population {
-  float: left;
   border: none;
-  display: block;
-  border-radius: 5px;
-  margin: 10px 20px 0px 20px;
   box-shadow: none;
+  border-radius: 5px;
+  margin: 10px 20px;
+}
+
+#button-reset {
+  background-color: #388c38;
 }
 
 .searchCountry {
-  display: block;
-  float: left;
-  width: 13rem;
+  width: 250px;
   padding: 10px;
-  margin: 7px 20px 0px 20px;
   border-radius: 0.3rem;
   color: #090a17;
   font-size: 14px;
   font-weight: bold;
   border: none;
+  margin: 10px 20px;
 }
 
 .filterByRegion {
-  display: block;
-  float: left;
   min-width: 240px;
   padding: 10px;
-  margin: 0px 20px 0px 20px;
   border: none;
+  margin: 10px 20px;
+}
+
+.filterByRegion-select {
+  width: 180px;
 }
 
 .chooseCountry {
-  display: block;
-  float: left;
   padding: 10px;
-  margin: 0px 20px 0px 20px;
   border: none;
-  /* min-width: 510px; */
+  margin: 10px 20px;
 }
 
 label,
 select {
+  /* width: auto; */
   font-size: 15px;
   font-weight: bold;
   height: 2rem;
-  width: auto;
   padding: 0 10px;
   border-radius: 5px;
   border: none;
-  /* background-color: #737373; */
-}
-
-.cards-container {
-  margin: 3rem;
 }
 
 /* //////////    FAVORITES    \\\\\\\\\\\\ */
@@ -176,14 +134,40 @@ select {
   color: #eee;
 }
 
+/* //////////    COUNTRY LIST    \\\\\\\\\\\\ */
+
+.grand-container {
+  width: 100vw;
+  font-family: "Nunito", sans-serif;
+}
+
+.grand-container button {
+  margin: 0 1rem 0 1rem;
+  border-radius: 1rem;
+  padding: 7px 20px;
+  box-shadow: 2px 2px 5px 1px #66666670;
+}
+
+.grand-container button:hover {
+  cursor: grab;
+}
+
+.grand-container button:active {
+  transform: translateY(2px) translateX(1px);
+}
+
 /* //////////    CARDS GRID    \\\\\\\\\\\\ */
+
+.cards-container {
+  margin: 3rem;
+}
 
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 70px 30px;
   justify-content: center;
-  margin: 250px 0px 50px 0px;
+  margin: 330px 0px 50px 0px;
 }
 
 /* //////////    CARD    \\\\\\\\\\\\ */

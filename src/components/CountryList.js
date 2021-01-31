@@ -19,8 +19,8 @@ export default function CountryList() {
   return (
     <>
       <section className="grand-container">
-        {/* /////////////////////////   FILTERS TOP   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
-        <section className="filters-container-top">
+        {/* /////////////////////////    FILTERS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+        <section className="filters-container">
           <div>
             <input
               type="text"
@@ -39,6 +39,7 @@ export default function CountryList() {
           <div className="filterByRegion">
             <label> Filter by Region: </label>
             <select
+              className="filterByRegion-select"
               onChange={(event) =>
                 setState({ ...state, countryRegion: event.target.value })
               }
@@ -78,23 +79,7 @@ export default function CountryList() {
                   ))}
             </select>
           </div>
-          <button
-            id="button-reset"
-            type="button"
-            onClick={(event) =>
-              setState({
-                selectedCountry: "Show All",
-                countrySearch: "",
-                countryRegion: "Show All",
-              })
-            }
-          >
-            RESET
-          </button>
-        </section>
-        {/* /////////////////////////   FILTERS BOTTOM   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
-        <section className="filters-container-bottom">
           <button
             id="button-big-population"
             type="button"
@@ -122,6 +107,19 @@ export default function CountryList() {
             {state.countriesFilterBigPopulation
               ? "ALL COUNTRIES"
               : "LEAST POPULATED COUNTRIES"}
+          </button>
+          <button
+            id="button-reset"
+            type="button"
+            onClick={(event) =>
+              setState({
+                selectedCountry: "Show All",
+                countrySearch: "",
+                countryRegion: "Show All",
+              })
+            }
+          >
+            RESET
           </button>
         </section>
 
