@@ -1,12 +1,26 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./styling.css";
 
 export default function CountryCard(props) {
-  const { addCountryToFavorites, removeCountryToFavorites } = React.useContext(
-    CountriesContext
-  );
+  const {
+    addCountryToFavorites,
+    removeCountryToFavorites,
+    countries,
+    setCountries,
+  } = React.useContext(CountriesContext);
+
+  const history = useHistory();
+
+  // React.useEffect(() => {
+  //   const countryToFindName = props.match.params.name;
+  //   console.log(countryToFindName);
+  //   const countryToSeeDetails = countries.find(
+  //     (country) => country.name === countryToFindName
+  //   );
+  //   setCountries(countryToSeeDetails);
+  // }, []);
 
   return (
     <section className="card-container">
@@ -15,9 +29,7 @@ export default function CountryCard(props) {
       </div>
       <h2>{props.name}</h2>
       <h5>Native name: {props.nativeName}</h5>
-      <h5>
-        Capital: <em>{props.capital}</em>
-      </h5>
+      <h5>Capital: {props.capital}</h5>
       <h5>Region: {props.region}</h5>
       <h5>Sub-Region: {props.subregion}</h5>
       <h5>Population: {props.population}</h5>
@@ -44,7 +56,7 @@ export default function CountryCard(props) {
         ) : null}
         <button className="button-details" type="button">
           <Link
-            to={`/countries/${props.name}`}
+            to={`/${props.name}`}
             style={{ textDecoration: "none", color: "black" }}
           >
             Details

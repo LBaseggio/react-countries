@@ -16,11 +16,11 @@ export default function CountriesContextProvider(props) {
   }, []);
 
   const countryDelete = (name) => {
-    console.log("COUNTRYDELETE NAME COMING IN: ", name);
+    // console.log("COUNTRYDELETE NAME COMING IN: ", name);
     const countriesUpdated = countries.filter(
       (country) => country.name !== name
     );
-    console.log("NEW COUNTRY LIST POST DELETION: ", countriesUpdated);
+    // console.log("NEW COUNTRY LIST POST DELETION: ", countriesUpdated);
     setCountries({ countries: countriesUpdated });
   };
 
@@ -30,7 +30,7 @@ export default function CountriesContextProvider(props) {
     const newFavoriteCountry = countries.find(
       (country) => country.name === countryNameToFavorite
     );
-    console.log(newFavoriteCountry);
+    // console.log(newFavoriteCountry);
     if (!countriesFavoriteList.includes(newFavoriteCountry)) {
       setCountriesFavoriteList([...countriesFavoriteList, newFavoriteCountry]);
     } else {
@@ -40,7 +40,7 @@ export default function CountriesContextProvider(props) {
 
   const removeCountryToFavorites = (countryNameToLeaveFavorite) => {
     // movieIdToRemove === props.id em Movie.js
-    console.log(countryNameToLeaveFavorite);
+    // console.log(countryNameToLeaveFavorite);
     const countriesFavoriteListUpdated = countriesFavoriteList.filter(
       (country) => country.name !== countryNameToLeaveFavorite
     );
