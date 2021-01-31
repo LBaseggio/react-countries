@@ -8,9 +8,11 @@ export default function CountryList() {
     CountriesContext
   );
   const [state, setState] = React.useState({
-    selectedCountry: "Show All",
     countrySearch: "",
+    selectedCountry: "Show All",
     countryRegion: "Show All",
+    countriesFilterBigPopulation: false,
+    countriesFilterSmallPopulation: false,
     deleteCountry: false,
   });
 
@@ -32,7 +34,6 @@ export default function CountryList() {
               }
             />
           </div>
-
           <div className="filterByRegion">
             <label> Filter by Region: </label>
 
@@ -50,7 +51,6 @@ export default function CountryList() {
               <option value="Oceania"> Oceania </option>
             </select>
           </div>
-
           <div className="chooseCountry">
             <label> Choose a Country: </label>
             <select
@@ -76,9 +76,36 @@ export default function CountryList() {
                   ))}
             </select>
           </div>
+          <button
+            type="button"
+            onClick={(event) =>
+              setState({
+                ...state,
+                countriesFilterBigPopulation: !state.countriesFilterBigPopulation,
+              })
+            }
+          >
+            {state.countriesFilterBigPopulation
+              ? "ALL COUNTRIES"
+              : "MOST POPULATED COUNTRIES"}
+          </button>
+          <button
+            type="button"
+            onClick={(event) =>
+              setState({
+                ...state,
+                countriesFilterSmallPopulation: !state.countriesFilterSmallPopulation,
+              })
+            }
+          >
+            {state.countriesFilterBigPopulation
+              ? "ALL COUNTRIES"
+              : "LEAST POPULATED COUNTRIES"}
+          </button>
 
           <button
             id="reset-button"
+            type="button"
             onClick={(event) =>
               setState({
                 selectedCountry: "Show All",
@@ -119,6 +146,21 @@ export default function CountryList() {
                         .toLowerCase()
                         .startsWith(state.countrySearch)
                     : countryName
+                )
+                .filter((countryFilteredByRegion) =>
+                  state.countryRegion !== "Show All"
+                    ? countryFilteredByRegion.region === state.countryRegion
+                    : countryFilteredByRegion
+                )
+                .filter((countryHighlyPopulated) =>
+                  state.countriesFilterBigPopulation
+                    ? countryHighlyPopulated.population >= 100000000
+                    : countryHighlyPopulated
+                )
+                .filter((countryScarcelyPopulated) =>
+                  state.countriesFilterSmallPopulation
+                    ? countryScarcelyPopulated.population <= 5000
+                    : countryScarcelyPopulated
                 )
                 .filter((countryFilteredByRegion) =>
                   state.countryRegion !== "Show All"
