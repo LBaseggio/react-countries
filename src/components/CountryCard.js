@@ -1,6 +1,6 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-import "./countries.css";
+import "./styling.css";
 
 export default function CountryCard(props) {
   const { addCountryToFavorites, removeCountryToFavorites } = React.useContext(
@@ -21,9 +21,7 @@ export default function CountryCard(props) {
       <h5>Sub-Region: {props.subregion}</h5>
       <h5>Population: {props.population}</h5>
       <h5>Area: {props.area}km²</h5>
-      <div>
-        <h5>Language: {props.languages && props.languages[0].name}</h5>
-      </div>
+      <h5>Language: {props.languages && props.languages[0].name}</h5>
       <div className="buttons-container">
         {props.isRemoveCountryDisplayed ? (
           <button

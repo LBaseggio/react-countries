@@ -1,7 +1,7 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
 import CountryCard from "./CountryCard";
-import "./countries.css";
+import "./styling.css";
 
 export default function CountryList() {
   const { countries, countriesFavoriteList } = React.useContext(
@@ -90,6 +90,7 @@ export default function CountryList() {
             RESET
           </button>
         </section>
+
         <div className="cards-container">
           {countriesFavoriteList.length ? (
             <section className="favorite-cards-grid">

@@ -1,18 +1,23 @@
-import React from "react";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import CountriesContextProvider from "./contexts/CountriesContext";
-import { Route, Redirect, Switch } from "react-router-dom";
 import CountryList from "./components/CountryList";
 import CountryDetails from "./components/CountryDetails";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   return (
-    <Switch>
+    <div>
       <CountriesContextProvider>
-        <CountryList />
-        <Route exact path="/home" component={CountryList} />
-        <Route path="/details" component={CountryDetails} />
-        <Redirect to="/home" />
+        <BrowserRouter>
+          <NavBar />
+          <Switch>
+            <CountryList />
+            <Route exact path="/countries" component={CountryList} />
+            <Route path="/countries/details" component={CountryDetails} />
+            <Redirect to="/countries" />
+          </Switch>
+        </BrowserRouter>
       </CountriesContextProvider>
-    </Switch>
+    </div>
   );
 }
