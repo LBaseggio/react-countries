@@ -42,11 +42,14 @@ export default function CountryCard(props) {
             Favorite
           </button>
         ) : null}
-        <Link to={`/countries/${props.name}`}>
-          <button className="button-details" type="button">
+        <button className="button-details" type="button">
+          <Link
+            to={`/countries/${props.name}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             Details
-          </button>
-        </Link>
+          </Link>
+        </button>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
+import { Link } from "react-router-dom";
 
 export default function CountryDetails(props) {
   const [removeCountryToFavorites, addCountryToFavorites] = React.useContext(
@@ -16,9 +17,7 @@ export default function CountryDetails(props) {
           </div>
           <h2>{props.name}</h2>
           <h5>Native name: {props.nativeName}</h5>
-          <h5>
-            Capital: <em>{props.capital}</em>
-          </h5>
+          <h5>Capital: {props.capital}</h5>
           <h5>Region: {props.region}</h5>
           <h5>Sub-Region: {props.subregion}</h5>
           <h5>Population: {props.population}</h5>
@@ -43,12 +42,13 @@ export default function CountryDetails(props) {
                 Favorite
               </button>
             ) : null}
-            <button
-              type="button"
-              className="button"
-              // onClick={() => enlarge(props.name)}
-            >
-              Details
+            <button className="button-return" type="button">
+              <Link
+                to="/countries"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Return
+              </Link>
             </button>
           </div>
         </section>

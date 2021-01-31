@@ -155,10 +155,12 @@ select {
   color: #eee;
 }
 
+/* //////////    CARDS GRID    \\\\\\\\\\\\ */
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 150px 30px;
+  grid-gap: 70px 30px;
   justify-content: center;
   margin: 250px 0px 50px 0px;
 }
