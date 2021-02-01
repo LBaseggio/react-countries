@@ -14,10 +14,6 @@ export default function CountryList(props) {
     countrySearch: "",
     selectedCountry: "Show All",
     countryRegion: "Show All",
-    countriesPopulationAscending: false,
-    // countriesFilterSmallPopulation: false,
-    // countriesFilterBigPopulation: false,
-    toogle: true,
   });
 
   return (
@@ -84,28 +80,13 @@ export default function CountryList(props) {
             </select>
           </div>
 
-          {/* <button
-            id="button-big-population"
-            type="button"
-            onClick={(event) =>
-              setState({
-                ...state,
-                countriesFilterBigPopulation: !state.countriesFilterBigPopulation;
-                populationAscending,
-              })
-            }
-          >
-            {state.countriesFilterBigPopulation
-              ? "REMOVE FILTER"
-              : "MOST POPULATED COUNTRIES"}
-          </button> */}
-
           <button
             id="button-big-population"
             type="button"
             onClick={() => populationAscending(props.population)}
           >
-            SORT BY BIGGEST POPULATION
+            SORT BY <br />
+            BIGGEST POPULATION
           </button>
 
           <button
@@ -113,23 +94,10 @@ export default function CountryList(props) {
             type="button"
             onClick={() => populationDescending(props.population)}
           >
-            SORT BY SMALLEST POPULATION
+            SORT BY <br />
+            SMALLEST POPULATION
           </button>
 
-          {/* <button
-            id="button-small-population"
-            type="button"
-            onClick={(event) =>
-              setState({
-                ...state,
-                countriesFilterSmallPopulation: !state.countriesFilterSmallPopulation,
-              })
-            }
-          >
-            {state.countriesFilterSmallPopulation
-              ? "REMOVE FILTER"
-              : "LEAST POPULATED COUNTRIES"}
-          </button> */}
           <button
             id="button-reset"
             type="button"
@@ -138,7 +106,6 @@ export default function CountryList(props) {
                 selectedCountry: "Show All",
                 countrySearch: "",
                 countryRegion: "Show All",
-                countriesPopulationAscending: false,
               })
             }
           >
@@ -182,16 +149,6 @@ export default function CountryList(props) {
                     ? countryFilteredByRegion.region === state.countryRegion
                     : countryFilteredByRegion
                 )
-                .filter((countriesPerHighPopulation) =>
-                  state.countriesFilterBigPopulation
-                    ? props.populationAscending
-                    : countriesPerHighPopulation
-                )
-                .filter((countryScarcelyPopulated) =>
-                  state.countriesFilterSmallPopulation
-                    ? countryScarcelyPopulated.population <= 5000
-                    : countryScarcelyPopulated
-                )
                 .filter((countryFilteredByRegion) =>
                   state.countryRegion !== "Show All"
                     ? countryFilteredByRegion.region === state.countryRegion
@@ -214,11 +171,3 @@ export default function CountryList(props) {
     </>
   );
 }
-
-{
-  /* .sort(function (countryA, countryB) { countryA.population - countryB.population }; */
-}
-
-//  .sort(function(countryA, countryB) => {
-//                 (countryA.population - countryB.population)
-//               }
