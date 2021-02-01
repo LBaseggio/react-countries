@@ -137,7 +137,7 @@ export default function CountryList(props) {
         {/* /////////////////////////   FAVORITES MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
         {countriesFavoriteList.length ? (
           <div className="favorite-list-text-container">
-            <h3>Favorite Countries</h3>
+            <h3 className="favorite-list-text">Favorite Countries</h3>
           </div>
         ) : null}
 
@@ -158,9 +158,11 @@ export default function CountryList(props) {
 
           <div
             className="cards-grid"
-            style={{
-              marginTop: `${!countriesFavoriteList.length ? "320px" : "50px"}`,
-            }}
+            id={`${
+              countriesFavoriteList.length
+                ? "cards-grid-with-favorite"
+                : "cards-grid-without-favorite"
+            }`}
           >
             {/* <h1>COUNT: {count}</h1> */}
             {state.selectedCountry === "Show All" ? (

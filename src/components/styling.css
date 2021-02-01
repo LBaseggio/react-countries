@@ -141,20 +141,21 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.favorite-list-text-container > h3 {
+.favorite-list-text {
   z-index: 2;
   display: flex;
   justify-content: center;
-  margin: 320px 0px 20px 0px;
   font-size: 30px;
   font-weight: 500;
   color: #eee;
+  margin: 320px 0px 20px 0px;
   font-family: "Permanent Marker", cursive;
 }
 
 /* //////////////////////////////    COUNTRY LIST    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .grand-container {
+  margin-top: 0px;
   width: 100vw;
   font-family: "Nunito", sans-serif;
 }
@@ -177,7 +178,7 @@ body {
 /* //////////////////////////////    CARDS GRID    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .cards-container {
-  margin: 50px;
+  margin: 50px 50px 50px 50px;
 }
 
 .cards-grid {
@@ -185,7 +186,24 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   grid-gap: 70px 30px;
-  /* margin: inside of a template literal */
+  border: 5px solid yellow;
+}
+#cards-grid-with-favorite {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  grid-gap: 70px 30px;
+  margin: 50px 50px 50px 50px;
+  border: 5px solid green;
+}
+
+#cards-grid-without-favorite {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  grid-gap: 70px 30px;
+  margin: 380px 50px 50px 50px;
+  border: 5px solid blue;
 }
 
 /* //////////////////////////////    CARD    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -198,7 +216,9 @@ body {
   flex-wrap: wrap;
   position: relative;
   width: 300px;
-  height: 500px;
+  min-height: 500px;
+  height: fit-content;
+  padding: 0 0 65px 0;
   border-radius: 5px 5px 20px 20px;
   background-color: #ffffff;
   background-image: url("../Assets/brushed-alum.png");
@@ -253,16 +273,43 @@ body {
   .globe {
     height: 60px;
   }
+  .cards-container {
+    margin: 30px 30px 30px 30px;
+  }
+  .cards-grid {
+    grid-gap: 120px 30px;
+  }
+  #cards-grid-with-favorite {
+    grid-gap: 120px 30px;
+  }
+  #cards-grid-without-favorite {
+    grid-gap: 120px 30px;
+  }
+  .favorite-list-text {
+    margin: 320px 0px 20px 0px;
+  }
+  .favorite-cards-grid {
+    padding: 40px 60px;
+    margin: 50px 20px 50px 20px;
+  }
 }
 
 @media only screen and (max-width: 940px) {
-  #navbar-text {
-    font-size: 50px;
+  .favorite-list-text {
+    margin: 320px 0px 20px 0px;
   }
-  .globe {
-    height: 60px;
+  .favorite-cards-grid {
+    padding: 40px 60px;
+    margin: 250px 20px 50px 20px;
   }
-  #filter-buttons-container {
-    margin-bottom: 200px;
+
+  @media only screen and (max-width: 830px) {
+    .favorite-list-text {
+      margin: 320px 0px 20px 0px;
+    }
+    .favorite-cards-grid {
+      padding: 40px 60px;
+      margin: 250px 20px 50px 20px;
+    }
   }
 }
