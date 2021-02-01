@@ -184,9 +184,7 @@ label,
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  align-items: center; /* left and right */
-  justify-content: center; /* up and down */
-  justify-self: center;
+  justify-items: center;
   grid-gap: 70px 30px;
   margin: 330px 0px 50px 0px;
 }
