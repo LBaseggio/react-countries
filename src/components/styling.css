@@ -47,6 +47,7 @@ body {
 .filters-container {
   position: fixed;
   top: 120px;
+  width: 100vw;
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -102,6 +103,10 @@ body {
   margin: 10px 20px;
 }
 
+.search-country:hover {
+  cursor: progress;
+}
+
 .filter-by-region-select,
 .choose-country-select {
   font-size: 15px;
@@ -113,29 +118,35 @@ body {
   margin: 10px 20px;
 }
 
+.filter-by-region-select:hover {
+  cursor: s-resize;
+}
+
+.choose-country-select:hover {
+  cursor: s-resize;
+}
+
 /* //////////////////////////////    FAVORITES    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .favorite-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 50px;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  grid-gap: 70px 30px;
+  padding: 80px 120px;
   border-radius: 1rem;
-  margin: 250px 0px 20px 0px;
+  margin: 10px 0px 20px 0px;
   box-shadow: 2px 2px 2px #333;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.favorite-list-text-container {
-  display: inline;
-}
-
 .favorite-list-text-container > h3 {
+  z-index: 2;
   display: flex;
   justify-content: center;
-  margin: 20px 0px 20px 0px;
-  font-size: 22px;
-  font-weight: 800;
+  margin: 320px 0px 20px 0px;
+  font-size: 30px;
+  font-weight: 500;
   color: #eee;
   font-family: "Permanent Marker", cursive;
 }
@@ -155,7 +166,7 @@ body {
 }
 
 .grand-container button:hover {
-  cursor: grab;
+  cursor: pointer;
 }
 
 .grand-container button:active {
@@ -165,7 +176,7 @@ body {
 /* //////////////////////////////    CARDS GRID    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .cards-container {
-  margin: 3rem;
+  margin: 50px;
 }
 
 .cards-grid {
@@ -173,7 +184,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   grid-gap: 70px 30px;
-  margin: 330px 0px 50px 0px;
+  /* margin: inside of a template literal */
 }
 
 /* //////////////////////////////    CARD    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

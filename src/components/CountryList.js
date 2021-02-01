@@ -135,34 +135,39 @@ export default function CountryList(props) {
         </section>
 
         {/* /////////////////////////   FAVORITES MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
-
-        <div className="cards-container">
-          {countriesFavoriteList.length ? (
-            <>
-              <div className="favorite-list-text-container">
-                <h3>Favorite Countries</h3>
-              </div>
-              <section className="favorite-cards-grid">
-                {countriesFavoriteList.map((country, index) => (
-                  <CountryCard
-                    {...country}
-                    key={index}
-                    isRemoveFavoriteDisplayed
-                  />
-                ))}
-              </section>
-            </>
-          ) : null}
-
+        {countriesFavoriteList.length ? (
           <div className="favorite-list-text-container">
             <h3>Favorite Countries</h3>
           </div>
+        ) : null}
+
+        <div className="cards-container">
+          {countriesFavoriteList.length ? (
+            <section className="favorite-cards-grid">
+              {countriesFavoriteList.map((country, index) => (
+                <CountryCard
+                  {...country}
+                  key={index}
+                  isRemoveFavoriteDisplayed
+                />
+              ))}
+            </section>
+          ) : null}
 
           {/* /////////////////////////   MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
-          <div className="cards-grid">
+          <div
+            className="cards-grid"
+            // id={`${
+            //   countriesFavoriteList
+            //     ? "cards-grid-whithout-favorites"
+            //     : "cards-grid-whith-favorites"
+            //   }`}
+            style={{
+              marginTop: `${!countriesFavoriteList.length ? "320px" : "50px"}`,
+            }}
+          >
             {/* <h1>COUNT: {count}</h1> */}
-
             {state.selectedCountry === "Show All" ? (
               countries &&
               countries
