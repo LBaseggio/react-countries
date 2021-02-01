@@ -3,17 +3,21 @@ import { CountriesContext } from "../contexts/CountriesContext";
 import CountryCard from "./CountryCard";
 import "./styling.css";
 
-export default function CountryList() {
-  const { countries, countriesFavoriteList } = React.useContext(
-    CountriesContext
-  );
+export default function CountryList(props) {
+  const {
+    countries,
+    countriesFavoriteList,
+    populationAscending,
+    populationDescending,
+  } = React.useContext(CountriesContext);
   const [state, setState] = React.useState({
     countrySearch: "",
     selectedCountry: "Show All",
     countryRegion: "Show All",
-    countriesFilterBigPopulation: false,
-    countriesFilterSmallPopulation: false,
-    deleteCountry: false,
+    countriesPopulationAscending: false,
+    // countriesFilterSmallPopulation: false,
+    // countriesFilterBigPopulation: false,
+    toogle: true,
   });
 
   return (
@@ -45,12 +49,12 @@ export default function CountryList() {
               }
               value={state.countryRegion}
             >
-              <option value="Show All"> Show All </option>
-              <option value="Africa"> Africa </option>
-              <option value="Americas"> Americas </option>
-              <option value="Asia"> Asia </option>
-              <option value="Europe"> Europe </option>
-              <option value="Oceania"> Oceania </option>
+              <option> Show All </option>
+              <option> Africa </option>
+              <option> Americas </option>
+              <option> Asia </option>
+              <option> Europe </option>
+              <option> Oceania </option>
             </select>
           </div>
 
@@ -80,21 +84,39 @@ export default function CountryList() {
             </select>
           </div>
 
-          <button
+          {/* <button
             id="button-big-population"
             type="button"
             onClick={(event) =>
               setState({
                 ...state,
-                countriesFilterBigPopulation: !state.countriesFilterBigPopulation,
+                countriesFilterBigPopulation: !state.countriesFilterBigPopulation;
+                populationAscending,
               })
             }
           >
             {state.countriesFilterBigPopulation
-              ? "ALL COUNTRIES"
+              ? "REMOVE FILTER"
               : "MOST POPULATED COUNTRIES"}
-          </button>
+          </button> */}
+
           <button
+            id="button-big-population"
+            type="button"
+            onClick={() => populationAscending(props.population)}
+          >
+            SORT BY BIGGEST POPULATION
+          </button>
+
+          <button
+            id="button-small-population"
+            type="button"
+            onClick={() => populationDescending(props.population)}
+          >
+            SORT BY SMALLEST POPULATION
+          </button>
+
+          {/* <button
             id="button-small-population"
             type="button"
             onClick={(event) =>
@@ -104,10 +126,10 @@ export default function CountryList() {
               })
             }
           >
-            {state.countriesFilterBigPopulation
-              ? "ALL COUNTRIES"
+            {state.countriesFilterSmallPopulation
+              ? "REMOVE FILTER"
               : "LEAST POPULATED COUNTRIES"}
-          </button>
+          </button> */}
           <button
             id="button-reset"
             type="button"
@@ -116,6 +138,7 @@ export default function CountryList() {
                 selectedCountry: "Show All",
                 countrySearch: "",
                 countryRegion: "Show All",
+                countriesPopulationAscending: false,
               })
             }
           >
@@ -159,10 +182,10 @@ export default function CountryList() {
                     ? countryFilteredByRegion.region === state.countryRegion
                     : countryFilteredByRegion
                 )
-                .filter((countryHighlyPopulated) =>
+                .filter((countriesPerHighPopulation) =>
                   state.countriesFilterBigPopulation
-                    ? countryHighlyPopulated.population >= 100000000
-                    : countryHighlyPopulated
+                    ? props.populationAscending
+                    : countriesPerHighPopulation
                 )
                 .filter((countryScarcelyPopulated) =>
                   state.countriesFilterSmallPopulation

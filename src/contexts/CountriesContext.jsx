@@ -5,6 +5,14 @@ export const CountriesContext = React.createContext(null);
 export default function CountriesContextProvider(props) {
   const [countries, setCountries] = React.useState();
   const [countriesFavoriteList, setCountriesFavoriteList] = React.useState([]);
+  const [
+    countriesBySmallestPopulation,
+    setCountriesBySmallestPopulation,
+  ] = React.useState([]);
+  const [
+    countriesByBiggestPopulation,
+    setCountriesByBiggestPopulation,
+  ] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -25,7 +33,7 @@ export default function CountriesContextProvider(props) {
   };
 
   const addCountryToFavorites = (countryNameToFavorite) => {
-    // countryNameToFavorite === props.id em Movie.js
+    // countryNameToFavorite === props.id em Country.js
     // console.log(countryNameToFavorite);
     const newFavoriteCountry = countries.find(
       (country) => country.name === countryNameToFavorite
@@ -39,13 +47,28 @@ export default function CountriesContextProvider(props) {
   };
 
   const removeCountryToFavorites = (countryNameToLeaveFavorite) => {
-    // movieIdToRemove === props.id em Movie.js
     // console.log(countryNameToLeaveFavorite);
     const countriesFavoriteListUpdated = countriesFavoriteList.filter(
       (country) => country.name !== countryNameToLeaveFavorite
     );
     console.log(countriesFavoriteListUpdated);
     setCountriesFavoriteList([...countriesFavoriteListUpdated]);
+  };
+
+  const populationAscending = (countryPopulation) => {
+    const countriesByHighPopulationList = countries.sort(
+      (a, b) => b.population - a.population
+    );
+    console.log("populationAscending:", countriesByHighPopulationList);
+    setCountriesByBiggestPopulation(countriesByHighPopulationList);
+  };
+
+  const populationDescending = (countryPopulation) => {
+    const countriesBySmallestPopulationList = countries.sort(
+      (a, b) => a.population - b.population
+    );
+    console.log("populationDescending:", countriesBySmallestPopulationList);
+    setCountriesBySmallestPopulation(countriesBySmallestPopulationList);
   };
 
   return (
@@ -57,6 +80,8 @@ export default function CountriesContextProvider(props) {
         countriesFavoriteList,
         addCountryToFavorites,
         removeCountryToFavorites,
+        populationAscending,
+        populationDescending,
       }}
     >
       {props.children}

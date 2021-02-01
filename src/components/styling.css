@@ -45,7 +45,7 @@ body {
 .filters-container {
   position: fixed;
   top: 120px;
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -54,7 +54,7 @@ body {
   flex-wrap: wrap;
   overflow: visible;
   margin: 0px 0px 90px 0px;
-  padding: 20px 3rem;
+  padding: 20px 3rem 20px 3rem;
   background-color: hsla(0, 0%, 55%, 0.925);
   background-image: url("../Assets/bright-squares.png");
 }
@@ -70,6 +70,8 @@ body {
 
 #button-reset {
   background-color: #388c38;
+  color: #fff;
+  font-weight: bold;
 }
 
 .searchCountry {
@@ -104,7 +106,7 @@ label,
 select {
   /* width: auto; */
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 400;
   height: 2rem;
   padding: 0 10px;
   border-radius: 5px;
