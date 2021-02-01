@@ -29,6 +29,7 @@ body {
   font-weight: 700;
   letter-spacing: 4px;
   margin: 0px 0px 0px 30px;
+  text-align: center;
   font-family: "Permanent Marker", cursive;
   text-shadow: 1px 1px 1px #3c3c3c;
   color: rgb(227, 227, 227);
@@ -296,20 +297,44 @@ body {
 
 @media only screen and (max-width: 940px) {
   .favorite-list-text {
-    margin: 320px 0px 20px 0px;
+    margin: 360px 0px 20px 0px;
   }
   .favorite-cards-grid {
     padding: 40px 60px;
-    margin: 250px 20px 50px 20px;
+    margin: 35px 20px 50px 20px;
   }
 
   @media only screen and (max-width: 830px) {
     .favorite-list-text {
-      margin: 320px 0px 20px 0px;
+      margin: 360px 0px 20px 0px;
     }
     .favorite-cards-grid {
-      padding: 40px 60px;
-      margin: 250px 20px 50px 20px;
+      margin: 0px 20px 50px 20px;
+    }
+  }
+  @media only screen and (max-width: 780px) {
+    #navbar-text {
+      font-size: 44px;
+      text-align: center;
+    }
+    .globe {
+      height: 48px;
+    }
+    .favorite-list-text {
+      margin: 425px 0px 20px 0px;
+    }
+    .favorite-cards-grid {
+      margin: 110px 20px 50px 20px;
+    }
+    #cards-grid-with-favorite {
+      grid-gap: 120px 30px;
+      margin: 200px 50px 50px 50px;
+      border: 5px solid rgb(68, 0, 128);
+    }
+    #cards-grid-without-favorite {
+      grid-gap: 120px 30px;
+      margin: 440px 50px 50px 50px;
+      border: 5px solid rgb(128, 0, 13);
     }
   }
 }
