@@ -5,20 +5,20 @@ export const CountriesContext = React.createContext(null);
 export default function CountriesContextProvider(props) {
   const [countries, setCountries] = React.useState();
   const [countriesFavoriteList, setCountriesFavoriteList] = React.useState([]);
-  const [countriesByBiggestArea, setCountriesByBiggestArea] = React.useState(
-    []
-  );
-  const [countriesBySmallestArea, setCountriesBySmallestArea] = React.useState(
-    []
-  );
-  const [
-    countriesBySmallestPopulation,
-    setCountriesBySmallestPopulation,
-  ] = React.useState([]);
-  const [
-    countriesByBiggestPopulation,
-    setCountriesByBiggestPopulation,
-  ] = React.useState([]);
+  // const [countriesByBiggestArea, setCountriesByBiggestArea] = React.useState(
+  //   []
+  // );
+  // const [countriesBySmallestArea, setCountriesBySmallestArea] = React.useState(
+  //   []
+  // );
+  // const [
+  //   countriesBySmallestPopulation,
+  //   setCountriesBySmallestPopulation,
+  // ] = React.useState([]);
+  // const [
+  //   countriesByBiggestPopulation,
+  //   setCountriesByBiggestPopulation,
+  // ] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -62,35 +62,35 @@ export default function CountriesContextProvider(props) {
   };
 
   const populationAscending = (countryPopulation) => {
-    const countriesByHighPopulationList = countries.sort(
+    const countriesByHighPopulationList = [...countries].sort(
       (a, b) => b.population - a.population
     );
-    // console.log("populationAscending:", countriesByHighPopulationList);
-    setCountriesByBiggestPopulation(countriesByHighPopulationList);
+    console.log("populationAscending:", countriesByHighPopulationList);
+    setCountries(countriesByHighPopulationList);
   };
 
   const populationDescending = (countryPopulation) => {
-    const countriesBySmallestPopulationList = countries.sort(
+    const countriesBySmallestPopulationList = [...countries].sort(
       (a, b) => a.population - b.population
     );
-    // console.log("populationDescending:", countriesBySmallestPopulationList);
-    setCountriesBySmallestPopulation(countriesBySmallestPopulationList);
+    console.log("populationDescending:", countriesBySmallestPopulationList);
+    setCountries(countriesBySmallestPopulationList);
   };
 
   const areaAscending = (countryArea) => {
-    const countriesByBiggestAreaList = countries.sort(
+    const countriesByBiggestAreaList = [...countries].sort(
       (a, b) => b.area - a.area
     );
-    // console.log("areaAscending:", countriesByBiggestAreaList);
-    setCountriesByBiggestArea(countriesByBiggestAreaList);
+    console.log("areaAscending:", countriesByBiggestAreaList);
+    setCountries(countriesByBiggestAreaList);
   };
 
   const areaDescending = (countryArea) => {
-    const countriesBySmallestAreaList = countries.sort(
+    const countriesBySmallestAreaList = [...countries].sort(  
       (a, b) => a.area - b.area
     );
-    // console.log("areaDescending:", countriesBySmallestAreaList);
-    setCountriesBySmallestPopulation(countriesBySmallestAreaList);
+    console.log("areaDescending:", countriesBySmallestAreaList);
+    setCountries(countriesBySmallestAreaList);
   };
 
   return (

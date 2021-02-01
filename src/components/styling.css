@@ -133,8 +133,6 @@ label,
 .favorite-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  align-items: center; /* left and right */
-  justify-content: center; /* up and down */
   grid-gap: 50px;
   /* justify-content: center; */
   margin: 250px 0px 20px 0px;
@@ -142,6 +140,12 @@ label,
   border-radius: 1rem;
   box-shadow: 2px 2px 2px #333;
   background-color: rgba(255, 255, 255, 0.1);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  grid-gap: 70px 30px;
+  margin: 330px 0px 50px 0px;
 }
 
 .favorite-cards-grid h3 {

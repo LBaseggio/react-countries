@@ -17,6 +17,9 @@ export default function CountryList(props) {
     selectedCountry: "Show All",
     countryRegion: "Show All",
   });
+  // const [count, setCount] = React.useState(0);
+
+  var count = 0;
 
   return (
     <>
@@ -140,22 +143,20 @@ export default function CountryList(props) {
         <div className="cards-container">
           {countriesFavoriteList.length ? (
             <section className="favorite-cards-grid">
-              <div>
-                <span>
-                  <h3>Favorite Countries</h3>
-                  {countriesFavoriteList.map((country, index) => (
-                    <CountryCard
-                      {...country}
-                      key={index}
-                      isRemoveCountryDisplayed
-                    />
-                  ))}
-                </span>
-              </div>
+              Favorite Countries
+              {countriesFavoriteList.map((country, index) => (
+                <CountryCard
+                  {...country}
+                  key={index}
+                  isRemoveCountryDisplayed
+                />
+              ))}
             </section>
           ) : null}
 
           <div className="cards-grid">
+            {/* <h1>COUNT: {count}</h1> */}
+
             {state.selectedCountry === "Show All" ? (
               countries &&
               countries
@@ -193,3 +194,18 @@ export default function CountryList(props) {
     </>
   );
 }
+// .map((country, index, arrayForCount) => {
+//                   if (
+//                     arrayForCount.length &&
+//                     arrayForCount.length - 1 === index
+//                   ) {
+//                     return (count = index + 1);
+//                   }
+//                   return (
+//                     <CountryCard
+//                       key={index}
+//                       {...country}
+//                       isAddCountryDisplayed
+//                     />
+//                   );
+//                 })
