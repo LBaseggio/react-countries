@@ -47,25 +47,25 @@ export default function CountryCard(props) {
       ) : null}
       <h5>Language: {props.languages && props.languages[0].name}</h5>
       <div className="buttons-container">
-        {props.isRemoveCountryDisplayed ? (
+        {props.isRemoveFavoriteDisplayed ? (
           <button
             type="button"
-            className="button"
+            id="button-card"
             onClick={() => removeCountryToFavorites(props.name)}
           >
             Remove
           </button>
         ) : null}
-        {props.isAddCountryDisplayed ? (
+        {props.isAddFavoriteDisplayed ? (
           <button
             type="button"
-            className="button"
+            id="button-card"
             onClick={() => addCountryToFavorites(props.name)}
           >
             Favorite
           </button>
         ) : null}
-        <button className="button-details" type="button">
+        <button id="button-card" type="button">
           <Link
             to={`/${props.name}`}
             style={{ textDecoration: "none", color: "black" }}

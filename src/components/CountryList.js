@@ -30,7 +30,7 @@ export default function CountryList(props) {
           <span className="flex-container">
             <input
               type="text"
-              className="searchCountry"
+              className="search-country"
               placeholder="Search a country"
               value={state.countrySearch}
               onChange={(event) =>
@@ -41,47 +41,43 @@ export default function CountryList(props) {
               }
             />
 
-            <div className="filter-by-region">
-              <select
-                className="filter-by-region-select"
-                onChange={(event) =>
-                  setState({ ...state, countryRegion: event.target.value })
-                }
-                value={state.countryRegion}
-              >
-                <option> Filter by Region: </option>
-                <option> Africa </option>
-                <option> Americas </option>
-                <option> Asia </option>
-                <option> Europe </option>
-                <option> Oceania </option>
-              </select>
-            </div>
+            <select
+              className="filter-by-region-select"
+              onChange={(event) =>
+                setState({ ...state, countryRegion: event.target.value })
+              }
+              value={state.countryRegion}
+            >
+              <option> Filter by Region: </option>
+              <option> Africa </option>
+              <option> Americas </option>
+              <option> Asia </option>
+              <option> Europe </option>
+              <option> Oceania </option>
+            </select>
 
-            <div className="choose-country">
-              <select
-                className="select"
-                value={state.selectedCountry}
-                onChange={(event) =>
-                  setState({ ...state, selectedCountry: event.target.value })
-                }
-              >
-                <option> Choose a Country: </option>
-                <option disabled> -- Select -- </option>
-                {countries &&
-                  countries
-                    .filter((countryFilteredByRegion) =>
-                      state.countryRegion !== "Show All"
-                        ? countryFilteredByRegion.region === state.countryRegion
-                        : countryFilteredByRegion
-                    )
-                    .map((country, index) => (
-                      <option value={country.name} key={index}>
-                        {country.name}
-                      </option>
-                    ))}
-              </select>
-            </div>
+            <select
+              className="choose-country-select"
+              value={state.selectedCountry}
+              onChange={(event) =>
+                setState({ ...state, selectedCountry: event.target.value })
+              }
+            >
+              <option> Choose a Country: </option>
+              <option disabled> -- Select -- </option>
+              {countries &&
+                countries
+                  .filter((countryFilteredByRegion) =>
+                    state.countryRegion !== "Show All"
+                      ? countryFilteredByRegion.region === state.countryRegion
+                      : countryFilteredByRegion
+                  )
+                  .map((country, index) => (
+                    <option value={country.name} key={index}>
+                      {country.name}
+                    </option>
+                  ))}
+            </select>
           </span>
           <br />
           {/* /////////////////////////    FILTER BUTTONS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
@@ -138,21 +134,31 @@ export default function CountryList(props) {
           </span>
         </section>
 
-        {/* /////////////////////////   MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+        {/* /////////////////////////   FAVORITES MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
         <div className="cards-container">
           {countriesFavoriteList.length ? (
-            <section className="favorite-cards-grid">
-              Favorite Countries
-              {countriesFavoriteList.map((country, index) => (
-                <CountryCard
-                  {...country}
-                  key={index}
-                  isRemoveCountryDisplayed
-                />
-              ))}
-            </section>
+            <>
+              <div className="favorite-list-text-container">
+                <h3>Favorite Countries</h3>
+              </div>
+              <section className="favorite-cards-grid">
+                {countriesFavoriteList.map((country, index) => (
+                  <CountryCard
+                    {...country}
+                    key={index}
+                    isRemoveFavoriteDisplayed
+                  />
+                ))}
+              </section>
+            </>
           ) : null}
+
+          <div className="favorite-list-text-container">
+            <h3>Favorite Countries</h3>
+          </div>
+
+          {/* /////////////////////////   MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
           <div className="cards-grid">
             {/* <h1>COUNT: {count}</h1> */}
@@ -178,14 +184,18 @@ export default function CountryList(props) {
                     : countryFilteredByRegion
                 )
                 .map((country, index) => (
-                  <CountryCard key={index} {...country} isAddCountryDisplayed />
+                  <CountryCard
+                    key={index}
+                    {...country}
+                    isAddFavoriteDisplayed
+                  />
                 ))
             ) : (
               <CountryCard
                 {...countries.find(
                   (country) => country.name === state.selectedCountry
                 )}
-                isAddCountryDisplayed
+                isAddFavoriteDisplayed
               />
             )}
           </div>
@@ -205,7 +215,7 @@ export default function CountryList(props) {
 //                     <CountryCard
 //                       key={index}
 //                       {...country}
-//                       isAddCountryDisplayed
+//                       isAddFavoriteDisplayed
 //                     />
 //                   );
 //                 })

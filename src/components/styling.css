@@ -6,7 +6,7 @@ body {
   overflow-y: auto;
 }
 
-/* //////////    NAVBAR    \\\\\\\\\\\\ */
+/* //////////////////////////////    NAVBAR    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #navbar-container {
   display: flex;
@@ -42,11 +42,12 @@ body {
   filter: grayscale(100%) contrast(150%) brightness(90%);
 }
 
-/* //////////    FILTERS   \\\\\\\\\\\\ */
+/* //////////////////////////////    FILTERS   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .filters-container {
   position: fixed;
   top: 120px;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -55,7 +56,7 @@ body {
   flex-wrap: wrap;
   overflow: visible;
   margin: 0px 0px 90px 0px;
-  padding: 20px 3rem 20px 3rem;
+  padding: 0px 50px 20px 50px;
   background-color: hsla(0, 0%, 55%, 0.925);
   background-image: url("../Assets/bright-squares.png");
 }
@@ -89,7 +90,7 @@ body {
   letter-spacing: 1.5px;
 }
 
-.searchCountry {
+.search-country {
   width: 250px;
   height: 20px;
   padding: 12px;
@@ -101,63 +102,45 @@ body {
   margin: 10px 20px;
 }
 
-.filter-by-region {
-  min-width: 240px;
-  padding: 10px;
-  border: none;
-  margin: 10px 20px;
-}
-
-.filter-by-region-select {
-  width: 180px;
-}
-
-.choose-country {
-  padding: 10px;
-  border: none;
-  margin: 10px 20px;
-}
-
-label,
-.filterByReegion-select {
+.filter-by-region-select,
+.choose-country-select {
   font-size: 15px;
   font-weight: 400;
-  height: 2rem;
+  height: 44px;
   padding: 0 10px;
   border-radius: 5px;
   border: none;
+  margin: 10px 20px;
 }
 
-/* //////////    FAVORITES    \\\\\\\\\\\\ */
+/* //////////////////////////////    FAVORITES    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .favorite-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 50px;
-  /* justify-content: center; */
-  margin: 250px 0px 20px 0px;
   padding: 1rem;
   border-radius: 1rem;
+  margin: 250px 0px 20px 0px;
   box-shadow: 2px 2px 2px #333;
   background-color: rgba(255, 255, 255, 0.1);
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  justify-items: center;
-  grid-gap: 70px 30px;
-  margin: 330px 0px 50px 0px;
 }
 
-.favorite-cards-grid h3 {
+.favorite-list-text-container {
+  display: inline;
+}
+
+.favorite-list-text-container > h3 {
   display: flex;
   justify-content: center;
   margin: 20px 0px 20px 0px;
   font-size: 22px;
   font-weight: 800;
   color: #eee;
+  font-family: "Permanent Marker", cursive;
 }
 
-/* //////////    COUNTRY LIST    \\\\\\\\\\\\ */
+/* //////////////////////////////    COUNTRY LIST    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .grand-container {
   width: 100vw;
@@ -179,7 +162,7 @@ label,
   transform: translateY(2px) translateX(1px);
 }
 
-/* //////////    CARDS GRID    \\\\\\\\\\\\ */
+/* //////////////////////////////    CARDS GRID    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .cards-container {
   margin: 3rem;
@@ -193,7 +176,7 @@ label,
   margin: 330px 0px 50px 0px;
 }
 
-/* //////////    CARD    \\\\\\\\\\\\ */
+/* //////////////////////////////    CARD    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .card-container {
   box-sizing: border-box;
@@ -201,8 +184,9 @@ label,
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  position: relative;
   width: 300px;
-  height: auto;
+  height: 500px;
   border-radius: 5px 5px 20px 20px;
   background-color: #ffffff;
   background-image: url("../Assets/brushed-alum.png");
@@ -223,22 +207,24 @@ label,
 }
 
 .flag-container > img {
-  width: 100%;
   object-fit: cover;
   vertical-align: top;
-  margin: 0px 0px 8px 0px;
+  width: 100%;
+  margin: 0px 0px 15px 0px;
   border-radius: 5px 5px 0px 0px;
   box-shadow: 2px 2px 5px 1px #66666670;
 }
 
 .buttons-container {
-  margin: 10px;
+  position: absolute;
   align-self: center;
+  bottom: 0px;
+  margin: 15px;
 }
 
-.button {
+#button-card {
   padding: 7px 20px;
-  margin: 0 3px;
-  border-radius: 14px;
-  box-shadow: 2px 2px 5px 1px #66666670;
+  margin: 0 15px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 1px 1px #66666670;
 }

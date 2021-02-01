@@ -5,20 +5,6 @@ export const CountriesContext = React.createContext(null);
 export default function CountriesContextProvider(props) {
   const [countries, setCountries] = React.useState();
   const [countriesFavoriteList, setCountriesFavoriteList] = React.useState([]);
-  // const [countriesByBiggestArea, setCountriesByBiggestArea] = React.useState(
-  //   []
-  // );
-  // const [countriesBySmallestArea, setCountriesBySmallestArea] = React.useState(
-  //   []
-  // );
-  // const [
-  //   countriesBySmallestPopulation,
-  //   setCountriesBySmallestPopulation,
-  // ] = React.useState([]);
-  // const [
-  //   countriesByBiggestPopulation,
-  //   setCountriesByBiggestPopulation,
-  // ] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -86,7 +72,7 @@ export default function CountriesContextProvider(props) {
   };
 
   const areaDescending = (countryArea) => {
-    const countriesBySmallestAreaList = [...countries].sort(  
+    const countriesBySmallestAreaList = [...countries].sort(
       (a, b) => a.area - b.area
     );
     console.log("areaDescending:", countriesBySmallestAreaList);

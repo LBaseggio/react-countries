@@ -38,7 +38,7 @@ export default function CountryDetails(props) {
           <h5>Area: {props.area}km²</h5>
           <h5>Language: {props.languages && props.languages[0].name}</h5>
           <div className="buttons-container">
-            {props.isRemoveCountryDisplayed ? (
+            {props.isRemoveFavoriteDisplayed ? (
               <button
                 type="button"
                 className="button"
@@ -47,7 +47,7 @@ export default function CountryDetails(props) {
                 Remove
               </button>
             ) : null}
-            {props.isAddCountryDisplayed ? (
+            {props.isAddFavoriteDisplayed ? (
               <button
                 type="button"
                 className="button"
