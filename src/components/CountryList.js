@@ -9,6 +9,8 @@ export default function CountryList(props) {
     countriesFavoriteList,
     populationAscending,
     populationDescending,
+    areaAscending,
+    areaDescending,
   } = React.useContext(CountriesContext);
   const [state, setState] = React.useState({
     countrySearch: "",
@@ -20,8 +22,9 @@ export default function CountryList(props) {
     <>
       <section className="grand-container">
         {/* /////////////////////////    FILTERS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+
         <section className="filters-container">
-          <div>
+          <span className="flex-container">
             <input
               type="text"
               className="searchCountry"
@@ -34,83 +37,102 @@ export default function CountryList(props) {
                 })
               }
             />
-          </div>
 
-          <div className="filterByRegion">
-            <label> Filter by Region: </label>
-            <select
-              className="filterByRegion-select"
-              onChange={(event) =>
-                setState({ ...state, countryRegion: event.target.value })
-              }
-              value={state.countryRegion}
+            <div className="filter-by-region">
+              <select
+                className="filter-by-region-select"
+                onChange={(event) =>
+                  setState({ ...state, countryRegion: event.target.value })
+                }
+                value={state.countryRegion}
+              >
+                <option> Filter by Region: </option>
+                <option> Africa </option>
+                <option> Americas </option>
+                <option> Asia </option>
+                <option> Europe </option>
+                <option> Oceania </option>
+              </select>
+            </div>
+
+            <div className="choose-country">
+              <select
+                className="select"
+                value={state.selectedCountry}
+                onChange={(event) =>
+                  setState({ ...state, selectedCountry: event.target.value })
+                }
+              >
+                <option> Choose a Country: </option>
+                <option disabled> -- Select -- </option>
+                {countries &&
+                  countries
+                    .filter((countryFilteredByRegion) =>
+                      state.countryRegion !== "Show All"
+                        ? countryFilteredByRegion.region === state.countryRegion
+                        : countryFilteredByRegion
+                    )
+                    .map((country, index) => (
+                      <option value={country.name} key={index}>
+                        {country.name}
+                      </option>
+                    ))}
+              </select>
+            </div>
+          </span>
+          <br />
+          {/* /////////////////////////    FILTER BUTTONS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+          <span className="flex-container">
+            <button
+              id="button-big-population"
+              type="button"
+              onClick={() => populationAscending(props.population)}
             >
-              <option> Show All </option>
-              <option> Africa </option>
-              <option> Americas </option>
-              <option> Asia </option>
-              <option> Europe </option>
-              <option> Oceania </option>
-            </select>
-          </div>
+              BIGGEST <br />
+              POPULATION
+            </button>
 
-          <div className="chooseCountry">
-            <label> Choose a Country: </label>
-            <select
-              className="select"
-              value={state.selectedCountry}
-              onChange={(event) =>
-                setState({ ...state, selectedCountry: event.target.value })
+            <button
+              id="button-small-population"
+              type="button"
+              onClick={() => populationDescending(props.population)}
+            >
+              SMALLEST <br />
+              POPULATION
+            </button>
+
+            <button
+              id="button-big-area"
+              type="button"
+              onClick={() => areaAscending(props.area)}
+            >
+              BIGGEST <br />
+              AREA
+            </button>
+
+            <button
+              id="button-small-area"
+              type="button"
+              onClick={() => areaDescending(props.area)}
+            >
+              SMALLEST <br />
+              AREA
+            </button>
+
+            <button
+              id="button-reset"
+              type="button"
+              onClick={(event) =>
+                setState({
+                  countrySearch: "",
+                  countryRegion: "Show All",
+                  selectedCountry: "Show All",
+                })
               }
             >
-              <option> Show All </option>
-              <option disabled> -- Select -- </option>
-              {countries &&
-                countries
-                  .filter((countryFilteredByRegion) =>
-                    state.countryRegion !== "Show All"
-                      ? countryFilteredByRegion.region === state.countryRegion
-                      : countryFilteredByRegion
-                  )
-                  .map((country, index) => (
-                    <option value={country.name} key={index}>
-                      {country.name}
-                    </option>
-                  ))}
-            </select>
-          </div>
-
-          <button
-            id="button-big-population"
-            type="button"
-            onClick={() => populationAscending(props.population)}
-          >
-            SORT BY <br />
-            BIGGEST POPULATION
-          </button>
-
-          <button
-            id="button-small-population"
-            type="button"
-            onClick={() => populationDescending(props.population)}
-          >
-            SORT BY <br />
-            SMALLEST POPULATION
-          </button>
-
-          <button
-            id="button-reset"
-            type="button"
-            onClick={(event) =>
-              setState({
-                selectedCountry: "Show All",
-                countrySearch: "",
-                countryRegion: "Show All",
-              })
-            }
-          >
-            RESET
-          </button>
+              RESET
+            </button>
+          </span>
         </section>
 
         {/* /////////////////////////   MAPPING   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}

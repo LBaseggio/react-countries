@@ -11,7 +11,6 @@ export default function App() {
         <BrowserRouter>
           <NavBar />
           <Switch>
-            <CountryList />
             <Route exact path="/" component={CountryList} />
             <Route path="/:name" component={CountryDetails} />
             <Redirect to="/" />
