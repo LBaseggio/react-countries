@@ -57,11 +57,12 @@ body {
   flex-wrap: wrap;
   overflow: visible;
   margin: 0px 0px 90px 0px;
-  padding: 0px 50px 20px 50px;
+  /* padding: 0px 50px 20px 50px; */
   background-color: hsla(0, 0%, 55%, 0.925);
   background-image: url("../Assets/bright-squares.png");
 }
 .flex-container {
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -238,4 +239,30 @@ body {
   margin: 0 15px;
   border-radius: 7px;
   box-shadow: 1px 1px 1px 1px #66666670;
+}
+
+#filter-buttons-container {
+  margin-bottom: 0;
+}
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+@media only screen and (max-width: 1110px) {
+  #navbar-text {
+    font-size: 50px;
+  }
+  .globe {
+    height: 60px;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  #navbar-text {
+    font-size: 50px;
+  }
+  .globe {
+    height: 60px;
+  }
+  #filter-buttons-container {
+    margin-bottom: 200px;
+  }
 }

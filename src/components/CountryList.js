@@ -81,7 +81,7 @@ export default function CountryList(props) {
           </span>
           <br />
           {/* /////////////////////////    FILTER BUTTONS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
-          <span className="flex-container">
+          <span className="flex-container" id="filter-buttons-container">
             <button
               id="button-big-population"
               type="button"
@@ -158,11 +158,6 @@ export default function CountryList(props) {
 
           <div
             className="cards-grid"
-            // id={`${
-            //   countriesFavoriteList
-            //     ? "cards-grid-whithout-favorites"
-            //     : "cards-grid-whith-favorites"
-            //   }`}
             style={{
               marginTop: `${!countriesFavoriteList.length ? "320px" : "50px"}`,
             }}
