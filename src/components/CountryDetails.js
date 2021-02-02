@@ -1,6 +1,7 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-// import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import "./styling.css";
 
 export default function CountryDetails(props) {
   const {
@@ -12,19 +13,19 @@ export default function CountryDetails(props) {
 
   React.useEffect(() => {
     const countryToFindName = props.match.params.name;
-    setCountries(
-      countries.find((country) => country.name === countryToFindName)
+    const countryToSeeDetails = countries.find(
+      (country) => country.name === countryToFindName
     );
+    countries && setCountries(countryToSeeDetails);
   }, []);
   console.log("countries:", countries);
   // const history = useHistory();
 
   return (
-    <section>
-      <h4>Country Details</h4>
+    <section className="grand-card-details-container">
       <div>
-        <section className="card-container">
-          <div className="flag-container">
+        <section className="card-details-container">
+          <div className="flag-details-container">
             <img src={props.flag} alt="flag" />
           </div>
           <h2>{props.name}</h2>
@@ -35,7 +36,7 @@ export default function CountryDetails(props) {
           <h5>Population: {props.population}</h5>
           <h5>Area: {props.area}km²</h5>
           <h5>Language: {props.languages && props.languages[0].name}</h5>
-          <div className="buttons-container">
+          <div id="buttons-details-container">
             {props.isRemoveFavoriteDisplayed ? (
               <button
                 type="button"
@@ -55,15 +56,15 @@ export default function CountryDetails(props) {
               </button>
             ) : null}
             <button
-              className="button-return"
+              id="button-return"
               type="button"
               // onClick={() => {
               //   history.push("/");
               // }}
             >
-              {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                 Return
-              </Link> */}
+              </Link>
               Return
             </button>
           </div>

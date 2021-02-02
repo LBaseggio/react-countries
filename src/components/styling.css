@@ -267,6 +267,55 @@ body {
 #filter-buttons-container {
   margin-bottom: 0;
 }
+
+/* //////////////////////////////////////////   CARD DETAILS   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.grand-card-details-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  justify-items: center;
+  margin: 200px 0px 0px 0px;
+}
+.card-details-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  width: 1000px;
+  min-height: 600px;
+  height: fit-content;
+  padding: 0 0 65px 0;
+  border-radius: 20px;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 3px 3px 33px 13px rgba(34, 34, 34, 0.404);
+  background-color: #72727252;
+  background-image: url("../Assets/brushed-alum.png");
+}
+#flag-details-container > img {
+  object-fit: cover;
+  vertical-align: top;
+  width: 100%;
+  margin: 0px 0px 15px 0px;
+  box-shadow: 2px 2px 5px 1px #66666670;
+  /* border-radius: 5px 5px 0px 0px; */
+}
+#buttons-details-container {
+}
+#card-container > h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 10px 0px 6px 20px;
+}
+
+#card-container > h5 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 4px 0px 6px 20px;
+}
+
 /* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 @media only screen and (max-width: 1110px) {
