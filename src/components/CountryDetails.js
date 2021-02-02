@@ -1,25 +1,23 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-import { Link, useHistory } from "react-router-dom";
+// import { Link, useHistory } from "react-router-dom";
 
 export default function CountryDetails(props) {
-  const [
+  const {
     countries,
     setCountries,
     removeCountryToFavorites,
     addCountryToFavorites,
-  ] = React.useContext(CountriesContext);
+  } = React.useContext(CountriesContext);
 
   React.useEffect(() => {
     const countryToFindName = props.match.params.name;
-    console.log(countryToFindName);
-    const countryToSeeDetails = countries.find(
-      (country) => country.name === countryToFindName
+    setCountries(
+      countries.find((country) => country.name === countryToFindName)
     );
-    setCountries(countryToSeeDetails);
   }, []);
-
-  const history = useHistory();
+  console.log("countries:", countries);
+  // const history = useHistory();
 
   return (
     <section>
@@ -59,9 +57,9 @@ export default function CountryDetails(props) {
             <button
               className="button-return"
               type="button"
-              onClick={() => {
-                history.push("/");
-              }}
+              // onClick={() => {
+              //   history.push("/");
+              // }}
             >
               {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                 Return

@@ -82,24 +82,30 @@ body {
   border-radius: 5px;
   line-height: 20px;
   margin: 10px 20px;
+  font-weight: 800px;
+  font-family: "Nunito", sans-serif;
 }
 
 #button-reset {
-  background-color: #4a6d4a;
-  color: #fff;
-  font-weight: bold;
   font-size: 16px;
   letter-spacing: 1.5px;
+  font-weight: 800;
+  color: #fff;
+  background-color: #4a6d4a;
+}
+
+#button-reset:hover {
+  cursor: grabbing;
 }
 
 .search-country {
   width: 250px;
   height: 20px;
-  padding: 12px;
+  padding: 12px 12px 12px 20px;
   border: none;
   border-radius: 5px;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
   color: #090a17;
   margin: 10px 20px;
 }

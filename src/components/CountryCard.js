@@ -11,21 +11,9 @@ export default function CountryCard(props) {
     setCountries,
   } = React.useContext(CountriesContext);
 
-  const history = useHistory();
-
-  // React.useEffect(() => {
-  //   const countryToFindName = props.match.params.name;
-  //   console.log(countryToFindName);
-  //   const countryToSeeDetails = countries.find(
-  //     (country) => country.name === countryToFindName
-  //   );
-  //   setCountries(countryToSeeDetails);
-  // }, []);
-
   function numberWithSeparators(number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
   }
-  // toString().toLocaleString();
 
   return (
     <section className="card-container">
@@ -37,8 +25,6 @@ export default function CountryCard(props) {
       <h5>Capital: {props.capital}</h5>
       <h5>Region: {props.region}</h5>
       <h5>Sub-Region: {props.subregion}</h5>
-      {/* <h5>Population: {props.population}</h5> */}
-      {/* <h5>Area: {props.area}km²</h5> */}
       {props.population !== null ? (
         <h5>Population: {numberWithSeparators(props.population)}</h5>
       ) : null}
