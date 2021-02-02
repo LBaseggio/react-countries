@@ -1,6 +1,7 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Spinner from "../Assets/spinner.gif";
 import "./styling.css";
 
 export default function CountryDetails(props) {
@@ -10,32 +11,38 @@ export default function CountryDetails(props) {
     removeCountryToFavorites,
     addCountryToFavorites,
   } = React.useContext(CountriesContext);
+  const history = useHistory();
 
   React.useEffect(() => {
     const countryToFindName = props.match.params.name;
     const countryToSeeDetails = countries.find(
       (country) => country.name === countryToFindName
     );
-    countries && setCountries(countryToSeeDetails);
+    countries ? (
+      setCountries(countryToSeeDetails)
+    ) : (
+      <img src={Spinner} alt="spinner" />
+    );
   }, []);
   console.log("countries:", countries);
-  // const history = useHistory();
 
   return (
     <section className="grand-card-details-container">
       <div>
         <section className="card-details-container">
           <div className="flag-details-container">
-            <img src={props.flag} alt="flag" />
+            <img src={countries.flag} alt="flag" />
           </div>
-          <h2>{props.name}</h2>
-          <h5>Native name: {props.nativeName}</h5>
-          <h5>Capital: {props.capital}</h5>
-          <h5>Region: {props.region}</h5>
-          <h5>Sub-Region: {props.subregion}</h5>
-          <h5>Population: {props.population}</h5>
-          <h5>Area: {props.area}km²</h5>
-          <h5>Language: {props.languages && props.languages[0].name}</h5>
+          <h2>{countries.name}</h2>
+          <h5>Native name: {countries.nativeName}</h5>
+          <h5>Capital: {countries.capital}</h5>
+          <h5>Region: {countries.region}</h5>
+          <h5>Sub-Region: {countries.subregion}</h5>
+          <h5>Population: {countries.population}</h5>
+          <h5>Area: {countries.area}km²</h5>
+          <h5>
+            Language: {countries.languages && countries.languages[0].name}
+          </h5>
           <div id="buttons-details-container">
             {props.isRemoveFavoriteDisplayed ? (
               <button
@@ -58,13 +65,10 @@ export default function CountryDetails(props) {
             <button
               id="button-return"
               type="button"
-              // onClick={() => {
-              //   history.push("/");
-              // }}
+              onClick={() => {
+                history.push("/");
+              }}
             >
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-                Return
-              </Link>
               Return
             </button>
           </div>
