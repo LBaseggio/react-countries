@@ -17,9 +17,9 @@ export default function CountryList(props) {
     selectedCountry: "Show All",
     countryRegion: "Show All",
   });
-  // const [count, setCount] = React.useState(0);
 
-  var count = 0;
+  // const [count, setCount] = React.useState(0);
+  // var count = 0;
 
   return (
     <>
@@ -128,6 +128,10 @@ export default function CountryList(props) {
                   selectedCountry: "Show All",
                 })
               }
+              // props.areaAscending=[],
+              // props.areaDescending=[],
+              // props.populationAscending=[],
+              // props.populationDescending=[],
             >
               RESET
             </button>

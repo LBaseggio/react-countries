@@ -1,79 +1,62 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-import { useHistory } from "react-router-dom";
-import Spinner from "../Assets/spinner.gif";
+import { Link } from "react-router-dom";
 import "./styling.css";
 
 export default function CountryDetails(props) {
   const {
     countries,
-    setCountries,
     removeCountryToFavorites,
     addCountryToFavorites,
   } = React.useContext(CountriesContext);
-  const history = useHistory();
-
-  React.useEffect(() => {
-    const countryToFindName = props.match.params.name;
-    const countryToSeeDetails = countries.find(
-      (country) => country.name === countryToFindName
-    );
-    countries ? (
-      setCountries(countryToSeeDetails)
-    ) : (
-      <img src={Spinner} alt="spinner" />
-    );
-  }, []);
-  console.log("countries:", countries);
 
   return (
-    <section className="grand-card-details-container">
-      <div>
-        <section className="card-details-container">
-          <div className="flag-details-container">
-            <img src={countries.flag} alt="flag" />
-          </div>
-          <h2>{countries.name}</h2>
-          <h5>Native name: {countries.nativeName}</h5>
-          <h5>Capital: {countries.capital}</h5>
-          <h5>Region: {countries.region}</h5>
-          <h5>Sub-Region: {countries.subregion}</h5>
-          <h5>Population: {countries.population}</h5>
-          <h5>Area: {countries.area}km²</h5>
-          <h5>
-            Language: {countries.languages && countries.languages[0].name}
-          </h5>
-          <div id="buttons-details-container">
-            {props.isRemoveFavoriteDisplayed ? (
-              <button
-                type="button"
-                className="button"
-                onClick={() => removeCountryToFavorites(props.name)}
-              >
-                Remove
-              </button>
-            ) : null}
-            {props.isAddFavoriteDisplayed ? (
-              <button
-                type="button"
-                className="button"
-                onClick={() => addCountryToFavorites(props.name)}
-              >
-                Favorite
-              </button>
-            ) : null}
-            <button
-              id="button-return"
-              type="button"
-              onClick={() => {
-                history.push("/");
-              }}
-            >
-              Return
-            </button>
-          </div>
-        </section>
-      </div>
-    </section>
+    <div>
+      {countries &&
+        countries
+          .filter(
+            (country) => props.match.params.name === country.name && country
+          )
+          .map((item) => (
+            <section className="grand-card-details-container">
+              <span className="card-details-container">
+                <div className="flag-details-container">
+                  <img src={item.flag} alt="flag" />
+                </div>
+                <h2>{item.name}</h2>
+                <h5>Native name: {item.nativeName}</h5>
+                <h5>Capital: {item.capital}</h5>
+                <h5>Region: {item.region}</h5>
+                <h5>Sub-Region: {item.subregion}</h5>
+                <h5>Population: {item.population}</h5>
+                <h5>Area: {item.area}km²</h5>
+                <h5>Language: {item.languages && item.languages[0].name}</h5>
+                <div id="buttons-details-container">
+                  {props.isRemoveFavoriteDisplayed ? (
+                    <button
+                      type="button"
+                      className="button"
+                      onClick={() => removeCountryToFavorites(props.name)}
+                    >
+                      Remove
+                    </button>
+                  ) : null}
+                  {props.isAddFavoriteDisplayed ? (
+                    <button
+                      type="button"
+                      className="button"
+                      onClick={() => addCountryToFavorites(props.name)}
+                    >
+                      Favorite
+                    </button>
+                  ) : null}
+                  <Link to="/" id="button-return">
+                    Return
+                  </Link>
+                </div>
+              </span>
+            </section>
+          ))}
+    </div>
   );
 }

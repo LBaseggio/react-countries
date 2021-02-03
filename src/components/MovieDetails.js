@@ -1,5 +1,4 @@
 import React from "react";
-import { MoviesContext } from "../contexts/MoviesContext";
 
 export default function MovieDetails(props) {
   const { favouriteMovies } = React.useContext(MoviesContext);
