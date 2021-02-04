@@ -6,12 +6,12 @@ import "./styling.css";
 export default function CountryDetails(props) {
   const {
     countries,
-    removeCountryToFavorites,
+    removeCountryFromFavorites,
     addCountryToFavorites,
   } = React.useContext(CountriesContext);
 
   return (
-    <div>
+    <section id="grand-container">
       {countries &&
         countries
           .filter(
@@ -19,24 +19,88 @@ export default function CountryDetails(props) {
           )
           .map((item) => (
             <section className="grand-card-details-container">
-              <span className="card-details-container">
-                <div className="flag-details-container">
-                  <img src={item.flag} alt="flag" />
-                </div>
+              <div className="flag-details-container">
+                <img src={item.flag} alt="flag" className="flag" />
+              </div>
+
+              <div className="card-details-container">
                 <h2>{item.name}</h2>
-                <h5>Native name: {item.nativeName}</h5>
-                <h5>Capital: {item.capital}</h5>
-                <h5>Region: {item.region}</h5>
-                <h5>Sub-Region: {item.subregion}</h5>
-                <h5>Population: {item.population}</h5>
-                <h5>Area: {item.area}km²</h5>
-                <h5>Language: {item.languages && item.languages[0].name}</h5>
+                <h5>
+                  <strong>Native name: </strong>
+                  {item.nativeName}
+                </h5>
+                <h5>
+                  <strong>Capital: </strong>
+                  {item.capital}
+                </h5>
+                <h5>
+                  <strong>Region: </strong>
+                  {item.region}
+                </h5>
+                <h5>
+                  <strong>Sub-Region: </strong>
+                  {item.subregion}
+                </h5>
+                <h5>
+                  <strong>Population: </strong>
+                  {item.population}
+                </h5>
+                <h5>
+                  <strong>Demonym: </strong>
+                  {item.demonym}
+                </h5>
+                <h5>
+                  <strong>Area: </strong>
+                  {item.area}km²
+                </h5>
+                <h5>
+                  <strong>Languages:</strong>
+                  {item.languages.map((item) => (
+                    <span>{item.name}</span>
+                  ))}
+                </h5>
+                {/* <h5>
+                  <strong>Translations:</strong>
+                  {Object.keys(item.translations).map(function (key, index) {
+                    console.log("translations:", item.translations);
+                    return <span>{item.translations[index]}</span>;
+                  })}
+                </h5> */}
+                <h5>
+                  <strong>Translations:</strong>
+                  {Object.keys(item.translations).map(
+                    (element) => `${element} | ${item.translations[element]}`
+                  )}
+                </h5>
+
+                {/* console.log(Object.keys(translations))
+                console.log(Object.values(translations))
+                console.log(Object.keys(translations).map(item =>(item,
+                translations[item]))); */}
+                <h5>
+                  <strong>Currencies:</strong>
+                </h5>
+                {item.currencies.map((item) => (
+                  <span>{item.name}</span>
+                ))}
+                <h5>
+                  <strong>Border Countries:</strong>
+                </h5>
+                {item.borders.map((item) => (
+                  <span>{item}</span>
+                ))}
+                <h5>
+                  <strong>Timezones:</strong>
+                </h5>
+                {item.timezones.map((item) => (
+                  <span>{item}</span>
+                ))}
                 <div id="buttons-details-container">
                   {props.isRemoveFavoriteDisplayed ? (
                     <button
                       type="button"
                       className="button"
-                      onClick={() => removeCountryToFavorites(props.name)}
+                      onClick={() => removeCountryFromFavorites(props.name)}
                     >
                       Remove
                     </button>
@@ -54,9 +118,17 @@ export default function CountryDetails(props) {
                     Return
                   </Link>
                 </div>
-              </span>
+              </div>
             </section>
           ))}
-    </div>
+    </section>
   );
 }
+
+// https://restcountries.eu/rest/v2/all
+
+// var myObject = { a: 1, b: 2, c: 3 };
+// Object.keys(myObject).map(function (key, index) {
+//   myObject[key] *= 2;
+// });
+// console.log(myObject);

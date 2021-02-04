@@ -6,7 +6,7 @@ import "./styling.css";
 export default function CountryCard(props) {
   const {
     addCountryToFavorites,
-    removeCountryToFavorites,
+    removeCountryFromFavorites,
     countries,
     setCountries,
   } = React.useContext(CountriesContext);
@@ -37,7 +37,7 @@ export default function CountryCard(props) {
           <button
             type="button"
             id="button-card"
-            onClick={() => removeCountryToFavorites(props.name)}
+            onClick={() => removeCountryFromFavorites(props.name)}
           >
             Remove
           </button>

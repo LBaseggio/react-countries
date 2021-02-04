@@ -38,7 +38,7 @@ export default function CountriesContextProvider(props) {
     }
   };
 
-  const removeCountryToFavorites = (countryNameToLeaveFavorite) => {
+  const removeCountryFromFavorites = (countryNameToLeaveFavorite) => {
     // console.log(countryNameToLeaveFavorite);
     const countriesFavoriteListUpdated = countriesFavoriteList.filter(
       (country) => country.name !== countryNameToLeaveFavorite
@@ -87,7 +87,7 @@ export default function CountriesContextProvider(props) {
         countryDelete,
         countriesFavoriteList,
         addCountryToFavorites,
-        removeCountryToFavorites,
+        removeCountryFromFavorites,
         populationAscending,
         populationDescending,
         areaAscending,
