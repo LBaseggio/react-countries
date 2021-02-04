@@ -201,7 +201,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   grid-gap: 50px 30px;
-  margin: 50px 50px 50px 50px;
+  margin: 50px 80px 50px 80px;
 }
 
 #cards-grid-without-favorite {
@@ -209,7 +209,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   grid-gap: 50px 30px;
-  margin: 380px 50px 50px 50px;
+  margin: 310px 50px 50px 50px;
 }
 
 /* //////////////////////////////    CARD    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -223,13 +223,13 @@ body {
   position: relative;
   min-width: 12vw;
   max-width: 80vw;
-  height: fit-content;
   padding: 0 0 65px 0;
   border-radius: 5px 5px 20px 20px;
   font-family: "Nunito", sans-serif;
   box-shadow: 3px 3px 3px #222;
   background-color: #ffffff;
   background-image: url("../Assets/brushed-alum.png");
+  /* height: fit-content; */
 }
 
 .card-container > h2 {
@@ -384,31 +384,42 @@ body {
   .favorite-list-text {
     margin: 240px 0px 20px 0px;
   }
-  .favorite-cards-grid {
-    padding: 40px 60px;
-    margin: 50px 20px 50px 20px;
-  }
   #cards-grid-without-favorite {
-    margin: 290px 50px 50px 50px;
+    margin: 240px 20px 20px 20px;
   }
 }
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
 
 @media only screen and (max-width: 940px) {
   #navbar-text {
     font-size: 42px;
   }
+  #cards-grid-without-favorite {
+    margin: 220px 10px 10px 10px;
+  }
 }
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
 
   @media only screen and (max-width: 830px) {
     #navbar-text {
       letter-spacing: 0px;
     }
     #cards-grid-without-favorite {
-      margin: 250px 50px 50px 50px;
+      margin: 220px 10px 10px 10px;
     }
   }
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
 
   @media only screen and (max-width: 773px) {
+
+    #navbar-container {
+      height: 70px;
+    }
+
+    .filters-container {
+      top: 70px;
+    }
+
     #navbar-text {
       font-size: 35px;
       margin: 0px 0px 0px 20px;
@@ -426,45 +437,131 @@ body {
       margin: 40px 15px 40px 15px;
     }
   #cards-grid-without-favorite {
-    margin: 280px 50px 50px 50px;
+    margin: 280px 10px 10px 10px;
   }
     #cards-grid-with-favorite {
-    margin: 240px 50px 50px 50px;
+    margin: 240px 10px 10px 10px;
   }
 }
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
 
   @media only screen and (max-width: 530px) {
     #cards-grid-without-favorite {
-      margin: 280px 50px 50px 50px;
+      margin: 280px 10px 10px 10px;
     }
 
     .favorite-list-text {
       margin: 445px 0px 20px 0px;
     }
     .favorite-cards-grid {
-      margin: 40px 20px 50px 20px;
+      margin: 40px 10px 10px 10px;
     }
 }
 
-
-
-
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
 
   @media only screen and (max-width: 505px) {
-    .favorite-list-text {
-      margin: 435px 0px 20px 0px;
-    }
+
+  #navbar-text {
+    font-size: 25px;
+    margin: 0px 0px 0px 10px;
   }
 
-  @media only screen and (max-width: 495px) {
-    .favorite-list-text {
-      margin: 575px 0px 20px 0px;
-    }
-    #cards-grid-with-favorite {
-      margin: 240px 50px 50px 50px;
-    }
-    #cards-grid-without-favorite {
-      margin: 300px 50px 50px 50px;
-    }
+  .globe {
+    height: 35px;
+    margin: 0px 0px 0px 10px;
   }
+
+  #navbar-container {
+    height: 60px;
+  }
+
+  .filters-container {
+    top: 60px;
+  }
+
+  .filter-by-region-select,
+  .choose-country-select {
+    height: 30px;
+    padding: 4px 6px;
+    font-size: 14px;
+    margin: 3px 10px;
+  }
+
+  .search-country {
+    min-width: 40vw;
+    height: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 3px 10px;
+  }
+
+  #button-reset,
+  #button-big-population,
+  #button-small-population,
+  #button-big-area,
+  #button-small-area {
+    font-size: 10px;
+    margin: 3px 10px;
+    padding: 5px 7px;
+  }
+
+  .favorite-list-text {
+    margin: 435px 0px 20px 0px;
+  }
+
+  .favorite-list-text {
+    margin: 575px 0px 20px 0px;
+  }
+
+  #cards-grid-with-favorite {
+    margin: 240px 10px 10px 10px;
+  }
+
+  #cards-grid-without-favorite {
+    margin: 220px 10px 10px 10px;
+  }
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 430px) {
+
+  .filter-by-region-select,
+  .choose-country-select {
+    height: 30px;
+    padding: 4px 6px;
+    font-size: 12px;
+    margin: 3px 5px;
+  }
+
+  .search-country {
+    min-width: 40vw;
+    height: 20px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 3px 5px;
+  }
+
+  #button-reset,
+  #button-big-population,
+  #button-small-population,
+  #button-big-area,
+  #button-small-area {
+    font-size: 10px;
+    margin: 3px 5px;
+    padding: 5px 7px;
+  }
+
+  .favorite-list-text {
+    margin: 200px 0px 20px 0px;
+    font-size:18px;
+  }
+  #cards-grid-with-favorite {
+    margin: 220px 0px 0px 0px;
+  }
+  #cards-grid-without-favorite {
+    margin: 210px 0px 10px 00px;
+  }
+}
+}
 
