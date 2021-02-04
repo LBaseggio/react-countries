@@ -1,15 +1,16 @@
 body {
-  background-color: #696969;
-  background-image: url("../Assets/bright-squares.png");
   overflow-wrap: overflow-wrap;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: #696969;
+  background-image: url("../Assets/bright-squares.png");
 }
 
 /* //////////////////////////////    NAVBAR    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 #navbar-container {
   display: flex;
+  height: 120px;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -17,7 +18,6 @@ body {
   width: 100vw;
   top: 0px;
   z-index: 2;
-  height: 120px;
   margin: 0;
   font-family: "Nunito", sans-serif;
   background-color: hsla(0, 0%, 55%, 0.925);
@@ -33,13 +33,12 @@ body {
   font-family: "Permanent Marker", cursive;
   text-shadow: 1px 1px 1px #3c3c3c;
   color: rgb(227, 227, 227);
-  /* text-transform: uppercase; */
 }
 
 .globe {
   height: 80px;
   opacity: 0.4;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%) contrast(150%) brightness(90%);
 }
 
@@ -49,6 +48,8 @@ body {
   position: fixed;
   top: 120px;
   width: 100vw;
+  min-height: 10vh;
+  max-height: 20vh;
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -56,7 +57,7 @@ body {
   align-items: center;
   justify-self: center;
   flex-wrap: wrap;
-  overflow: visible;
+  /* overflow: visible; */
   margin: 0px 0px 90px 0px;
   background-color: hsla(0, 0%, 55%, 0.925);
   background-image: url("../Assets/bright-squares.png");
@@ -77,16 +78,22 @@ body {
 #button-small-area {
   border: none;
   box-shadow: none;
-  min-width: 125px;
-  min-height: 55px;
-  border-radius: 5px;
-  line-height: 20px;
+  padding: none;
+  min-width: 10vw;
+  min-height: 5vh;
+  max-width: 32vw;
+  max-height: 12vh;
+  padding:4px;
   margin: 10px 20px;
+  border-radius: 5px;
   font-weight: 800px;
   font-family: "Nunito", sans-serif;
+  /* line-height: 20px; */
 }
 
 #button-reset {
+  max-height: 5vh;
+  min-height: 5.5vh;
   font-size: 16px;
   letter-spacing: 1.5px;
   font-weight: 800;
@@ -99,9 +106,10 @@ body {
 }
 
 .search-country {
-  width: 250px;
-  height: 20px;
-  padding: 12px 12px 12px 20px;
+  min-width: 20vw;
+  max-width: 40vw;
+  height: fit-content;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   font-weight: 400;
@@ -116,12 +124,14 @@ body {
 
 .filter-by-region-select,
 .choose-country-select {
+  border: none;
+  min-width: 12vw;
+  max-width: 80vw;
+  height: fit-content;
+  padding: 10px;
   font-size: 15px;
   font-weight: 400;
-  height: 44px;
-  padding: 0 10px;
   border-radius: 5px;
-  border: none;
   margin: 10px 20px;
 }
 
@@ -137,7 +147,7 @@ body {
 
 .favorite-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   grid-gap: 70px 30px;
   padding: 80px 120px;
@@ -154,7 +164,7 @@ body {
   font-size: 30px;
   font-weight: 500;
   color: #eee;
-  margin: 320px 0px 20px 0px;
+  margin: 270px 0px 20px 0px;
   font-family: "Permanent Marker", cursive;
 }
 
@@ -164,13 +174,6 @@ body {
   margin-top: 0px;
   width: 100vw;
   font-family: "Nunito", sans-serif;
-}
-
-.grand-container button {
-  margin: 0 1rem 0 1rem;
-  border-radius: 1rem;
-  padding: 7px 20px;
-  box-shadow: 2px 2px 5px 1px #66666670;
 }
 
 .grand-container button:hover {
@@ -184,20 +187,20 @@ body {
 /* //////////////////////////////    CARDS GRID    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .cards-container {
-  margin: 50px 50px 50px 50px;
+  margin: 3vh 1vw 3vh 1vw;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
-  grid-gap: 70px 30px;
+  grid-gap: 7vh 7vw;
 }
 #cards-grid-with-favorite {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
-  grid-gap: 70px 30px;
+  grid-gap: 50px 30px;
   margin: 50px 50px 50px 50px;
 }
 
@@ -205,7 +208,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
-  grid-gap: 70px 30px;
+  grid-gap: 50px 30px;
   margin: 380px 50px 50px 50px;
 }
 
@@ -218,8 +221,8 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   position: relative;
-  width: 300px;
-  min-height: 500px;
+  min-width: 12vw;
+  max-width: 80vw;
   height: fit-content;
   padding: 0 0 65px 0;
   border-radius: 5px 5px 20px 20px;
@@ -270,12 +273,12 @@ body {
 
 /* //////////////////////////////////////////   CARD DETAILS   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 #grand-container{
-border: solid 10px rgb(221, 0, 255);
-display: flex;
-justify-content: center;
-align-items: center;
-justify-items: center;
-justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  border: solid 10px rgb(0, 81, 255);
 }
 
 
@@ -284,12 +287,11 @@ justify-self: center;
     grid-template-columns: 1fr 1fr;
     column-gap: 120px;
     width: 70vw;
-      box-sizing: border-box;
-
+    box-sizing: border-box;
     margin: 200px 0px 0px 0px;
-    border: solid 4px red;
     align-self: center;
     justify-items: center;
+    border: solid 4px rgb(236, 13, 13);
 }
 
 #flag-details-container {
@@ -348,30 +350,46 @@ justify-self: center;
 /* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 @media only screen and (max-width: 1110px) {
-  #navbar-text {
-    font-size: 50px;
-  }
-  .globe {
-    height: 60px;
-  }
-  .cards-container {
-    margin: 30px 30px 30px 30px;
-  }
-  .cards-grid {
-    grid-gap: 120px 30px;
-  }
-  #cards-grid-with-favorite {
-    grid-gap: 120px 30px;
-  }
-  #cards-grid-without-favorite {
-    grid-gap: 120px 30px;
+
+#navbar-container {
+  height: 80px;
+}
+
+.filters-container {
+  top: 80px;
+}
+#navbar-text {
+  font-size: 50px;
+}
+.globe {
+  height: 60px;
+}
+
+.filter-by-region-select,
+.choose-country-select {
+  padding: 8px 11px;
+  font-size: 14px;
+  margin: 5px 8px;
+}
+
+  #button-reset,
+  #button-big-population,
+  #button-small-population,
+  #button-big-area,
+  #button-small-area {
+    font-size: 12px;
+    margin: 5px 8px;
+    padding: 8px 11px;
   }
   .favorite-list-text {
-    margin: 320px 0px 20px 0px;
+    margin: 240px 0px 20px 0px;
   }
   .favorite-cards-grid {
     padding: 40px 60px;
     margin: 50px 20px 50px 20px;
+  }
+  #cards-grid-without-favorite {
+    margin: 290px 50px 50px 50px;
   }
 }
 
@@ -379,34 +397,18 @@ justify-self: center;
   #navbar-text {
     font-size: 42px;
   }
-  .favorite-list-text {
-    margin: 360px 0px 20px 0px;
-  }
-  .favorite-cards-grid {
-    padding: 40px 60px;
-    margin: 35px 20px 50px 20px;
-  }
+}
 
   @media only screen and (max-width: 830px) {
     #navbar-text {
       letter-spacing: 0px;
     }
-    .favorite-list-text {
-      margin: 360px 0px 20px 0px;
-    }
-    .favorite-cards-grid {
-      margin: 0px 20px 50px 20px;
-    }
-    #cards-grid-with-favorite {
-      grid-gap: 120px 30px;
-      margin: 200px 50px 50px 50px;
-    }
     #cards-grid-without-favorite {
-      grid-gap: 120px 30px;
-      margin: 430px 50px 50px 50px;
+      margin: 250px 50px 50px 50px;
     }
   }
-  @media only screen and (max-width: 780px) {
+
+  @media only screen and (max-width: 773px) {
     #navbar-text {
       font-size: 35px;
       margin: 0px 0px 0px 20px;
@@ -416,29 +418,37 @@ justify-self: center;
       margin: 0px 0px 0px 20px;
     }
     .favorite-list-text {
-      margin: 445px 0px 20px 0px;
+      margin: 280px 0px 20px 0px;
     }
+
     .favorite-cards-grid {
-      margin: 40px 20px 50px 20px;
+      padding: 40px 60px;
+      margin: 40px 15px 40px 15px;
     }
-    #cards-grid-with-favorite {
-      grid-gap: 120px 30px;
-      margin: 200px 50px 50px 50px;
-    }
-    #cards-grid-without-favorite {
-      grid-gap: 120px 30px;
-      margin: 500px 50px 50px 50px;
-    }
+  #cards-grid-without-favorite {
+    margin: 280px 50px 50px 50px;
   }
+    #cards-grid-with-favorite {
+    margin: 240px 50px 50px 50px;
+  }
+}
 
   @media only screen and (max-width: 530px) {
+    #cards-grid-without-favorite {
+      margin: 280px 50px 50px 50px;
+    }
+
     .favorite-list-text {
       margin: 445px 0px 20px 0px;
     }
     .favorite-cards-grid {
       margin: 40px 20px 50px 20px;
     }
-  }
+}
+
+
+
+
 
   @media only screen and (max-width: 505px) {
     .favorite-list-text {
@@ -451,12 +461,10 @@ justify-self: center;
       margin: 575px 0px 20px 0px;
     }
     #cards-grid-with-favorite {
-      grid-gap: 120px 30px;
       margin: 240px 50px 50px 50px;
     }
     #cards-grid-without-favorite {
-      grid-gap: 120px 30px;
-      margin: 590px 50px 50px 50px;
+      margin: 300px 50px 50px 50px;
     }
   }
-}
+
