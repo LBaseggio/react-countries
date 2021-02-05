@@ -1,7 +1,7 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
 import CountryCard from "./CountryCard";
-import "./styling.css";
+import "./CSS/styling.css";
 
 export default function CountryList(props) {
   const {
@@ -128,10 +128,6 @@ export default function CountryList(props) {
                   selectedCountry: "Show All",
                 })
               }
-              // props.areaAscending=[],
-              // props.areaDescending=[],
-              // props.populationAscending=[],
-              // props.populationDescending=[],
             >
               RESET
             </button>

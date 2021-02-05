@@ -3,7 +3,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #696969;
-  background-image: url("../Assets/bright-squares.png");
+  background-image: url("../../Assets/bright-squares.png");
 }
 
 /* //////////////////////////////    NAVBAR    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -21,7 +21,7 @@ body {
   margin: 0;
   font-family: "Nunito", sans-serif;
   background-color: hsla(0, 0%, 55%, 0.925);
-  background-image: url("../Assets/bright-squares.png");
+  background-image: url("../../Assets/bright-squares.png");
 }
 
 #navbar-text {
@@ -57,11 +57,11 @@ body {
   align-items: center;
   justify-self: center;
   flex-wrap: wrap;
-  /* overflow: visible; */
   margin: 0px 0px 90px 0px;
   background-color: hsla(0, 0%, 55%, 0.925);
-  background-image: url("../Assets/bright-squares.png");
+  background-image: url("../../Assets/bright-squares.png");
 }
+
 .flex-container {
   width: 100vw;
   display: flex;
@@ -80,7 +80,7 @@ body {
   box-shadow: none;
   padding: none;
   min-width: 10vw;
-  min-height: 5vh;
+  min-height: 3vh;
   max-width: 32vw;
   max-height: 12vh;
   padding:4px;
@@ -88,12 +88,11 @@ body {
   border-radius: 5px;
   font-weight: 800px;
   font-family: "Nunito", sans-serif;
-  /* line-height: 20px; */
 }
 
 #button-reset {
   max-height: 5vh;
-  min-height: 5.5vh;
+  min-height: 3.5vh;
   font-size: 16px;
   letter-spacing: 1.5px;
   font-weight: 800;
@@ -150,9 +149,9 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   grid-gap: 70px 30px;
-  padding: 80px 120px;
+  padding: 40px 50px;
   border-radius: 1rem;
-  margin: 10px 0px 20px 0px;
+  margin: 10px 50px 20px 50px;
   box-shadow: 2px 2px 2px #333;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -164,9 +163,10 @@ body {
   font-size: 30px;
   font-weight: 500;
   color: #eee;
-  margin: 270px 0px 20px 0px;
+  margin: 300px 0px 20px 0px;
   font-family: "Permanent Marker", cursive;
 }
+
 
 /* //////////////////////////////    COUNTRY LIST    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
@@ -192,13 +192,13 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   justify-items: center;
   grid-gap: 7vh 7vw;
 }
 #cards-grid-with-favorite {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   justify-items: center;
   grid-gap: 50px 30px;
   margin: 50px 80px 50px 80px;
@@ -206,7 +206,7 @@ body {
 
 #cards-grid-without-favorite {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   justify-items: center;
   grid-gap: 50px 30px;
   margin: 310px 50px 50px 50px;
@@ -222,13 +222,13 @@ body {
   flex-wrap: wrap;
   position: relative;
   min-width: 12vw;
-  max-width: 80vw;
+  max-width: 25vw;
   padding: 0 0 65px 0;
   border-radius: 5px 5px 20px 20px;
   font-family: "Nunito", sans-serif;
   box-shadow: 3px 3px 3px #222;
   background-color: #ffffff;
-  background-image: url("../Assets/brushed-alum.png");
+  background-image: url("../../Assets/brushed-alum.png");
   /* height: fit-content; */
 }
 
@@ -313,7 +313,7 @@ body {
   font-family: "Nunito", sans-serif;
   box-shadow: 3px 3px 33px 13px rgba(34, 34, 34, 0.404);
   background-color: #72727252;
-  background-image: url("../Assets/brushed-alum.png");
+  background-image: url("../../Assets/brushed-alum.png");
   border: solid 4px rgb(255, 153, 0);
 }
 
@@ -348,8 +348,71 @@ body {
 }
 
 /* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-@media only screen and (max-width: 1110px) {
+
+@media only screen and (min-width: 1700px) {
+
+  .filters-container {
+    min-height: 7vh;
+    max-height: 8vh;
+  }
+
+  #button-big-population,
+  #button-small-population,
+  #button-big-area,
+  #button-small-area {
+    min-height: 2.2vh;
+    max-height: 12vh;
+  }
+
+  #button-reset{
+  min-height: 2.3vh;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  #cards-grid-with-favorite {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  #cards-grid-without-favorite {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  #cards-grid-without-favorite {
+    margin: 340px 50px 50px 50px;
+  }
+  .favorite-list-text {
+    margin:330px 0px 20px 0px;
+  }
+
+}
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+@media only screen and (max-width: 1220px) {
+
+.favorite-list-text {
+  margin: 280px 0px 20px 0px;
+}
+.favorite-cards-grid {
+  padding: 40px 38px;
+  margin: 40px 20px 40px 20px;
+}
+
+
+}
+/* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+@media only screen and (max-width: 1170px) {
 
 #navbar-container {
   height: 80px;
@@ -381,12 +444,20 @@ body {
     margin: 5px 8px;
     padding: 8px 11px;
   }
+
+
   .favorite-list-text {
     margin: 240px 0px 20px 0px;
   }
   #cards-grid-without-favorite {
     margin: 240px 20px 20px 20px;
   }
+
+  .card-container {
+    min-width: 12vw;
+    max-width: 35vw;
+  }
+
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -429,19 +500,24 @@ body {
       margin: 0px 0px 0px 20px;
     }
     .favorite-list-text {
-      margin: 280px 0px 20px 0px;
+      margin: 260px 0px 20px 0px;
     }
 
     .favorite-cards-grid {
-      padding: 40px 60px;
-      margin: 40px 15px 40px 15px;
+      padding: 20px 30px;
+      margin: 20px 10px 20px 10px;
     }
-  #cards-grid-without-favorite {
-    margin: 280px 10px 10px 10px;
-  }
-    #cards-grid-with-favorite {
-    margin: 240px 10px 10px 10px;
-  }
+    #cards-grid-without-favorite {
+      margin: 280px 10px 10px 10px;
+    }
+      #cards-grid-with-favorite {
+      margin: 240px 10px 10px 10px;
+    }
+
+    .card-container {
+      min-width: 12vw;
+      max-width: 60vw;
+    }
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -451,7 +527,7 @@ body {
     }
 
     .favorite-list-text {
-      margin: 445px 0px 20px 0px;
+      margin: 260px 0px 20px 0px;
     }
     .favorite-cards-grid {
       margin: 40px 10px 10px 10px;
@@ -506,16 +582,12 @@ body {
     padding: 5px 7px;
   }
 
-  .favorite-list-text {
-    margin: 435px 0px 20px 0px;
-  }
-
-  .favorite-list-text {
-    margin: 575px 0px 20px 0px;
-  }
+   .favorite-list-text {
+     margin: 210px 0px 20px 0px;
+   }
 
   #cards-grid-with-favorite {
-    margin: 240px 10px 10px 10px;
+    margin: 210px 10px 10px 10px;
   }
 
   #cards-grid-without-favorite {
@@ -524,7 +596,7 @@ body {
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 445px) {
 
   .filter-by-region-select,
   .choose-country-select {
@@ -552,59 +624,69 @@ body {
     padding: 5px 7px;
   }
 
-  .favorite-list-text {
-    margin: 200px 0px 20px 0px;
-    font-size:18px;
-  }
+   .favorite-cards-grid {
+     margin: 40px 5px 5px 5px;
+     padding: 20px;
+   }
+
   #cards-grid-with-favorite {
     margin: 220px 0px 0px 0px;
   }
   #cards-grid-without-favorite {
     margin: 210px 0px 10px 00px;
   }
+  .card-container {
+    min-width: 12vw;
+    max-width: 75vw;
+  }
+
 }
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 380px) {
 
-
   #navbar-text {
     font-size: 22px;
   }
 
-    .filter-by-region-select,
-    .choose-country-select {
-      padding: 4px 6px;
-      margin: 2px 4px;
-    }
-
-    .search-country {
-      padding: 5px 10px;
-      margin: 2px 4px;
-    }
-
-    #button-reset,
-    #button-big-population,
-    #button-small-population,
-    #button-big-area,
-    #button-small-area {
-      padding: 5px 4px;
-      margin: 2px 2px;
-    }
-
-    .favorite-list-text {
-      margin: 200px 0px 20px 0px;
-    }
-
-    #cards-grid-with-favorite {
-      margin: 220px 0px 0px 0px;
-    }
-
-    #cards-grid-without-favorite {
-      margin: 210px 0px 10px 00px;
-    }
+  .filter-by-region-select,
+  .choose-country-select {
+    padding: 4px 6px;
+    margin: 2px 4px;
   }
+
+  .search-country {
+    padding: 5px 10px;
+    margin: 2px 4px;
+  }
+
+  #button-reset,
+  #button-big-population,
+  #button-small-population,
+  #button-big-area,
+  #button-small-area {
+    padding: 5px 4px;
+    margin: 2px 2px;
+  }
+
+  .favorite-list-text {
+    margin: 200px 0px 20px 0px;
+  }
+
+  #cards-grid-with-favorite {
+    margin: 220px 0px 0px 0px;
+  }
+
+  #cards-grid-without-favorite {
+    margin: 210px 0px 10px 00px;
+  }
+
+  .favorite-cards-grid {
+    margin: 40px 5px 5px 5px;
+    padding: 10px;
+  }
+
   .buttons-container {
     margin: 10px;
   }
@@ -612,7 +694,31 @@ body {
   #button-card {
     margin: 0 10px;
   }
+}
 
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (max-width: 320px) {
+  .favorite-list-text {
+    margin: 200px 0px 20px 0px;
+  }
+
+.favorite-cards-grid{
+  margin: 2px;
+  padding: 12px 3px;
+}
+
+  #cards-grid-with-favorite {
+    margin: 220px 0px 0px 0px;
+  }
+
+  #cards-grid-without-favorite {
+    margin: 250px 0px 10px 0px;
+  }
+}
+  #button-card {
+    margin: 0 5px;
+  }
 
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Globe from "../Assets/globe.gif";
-import "./styling.css";
+import "./CSS/styling.css";
 
 export default function NavBar() {
   return (

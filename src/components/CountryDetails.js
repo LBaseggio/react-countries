@@ -1,7 +1,7 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
 import { Link } from "react-router-dom";
-import "./styling.css";
+import "./CSS/styling.css";
 
 export default function CountryDetails(props) {
   const {

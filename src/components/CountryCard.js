@@ -1,14 +1,12 @@
 import React from "react";
 import { CountriesContext } from "../contexts/CountriesContext";
-import { Link, useHistory } from "react-router-dom";
-import "./styling.css";
+import { Link } from "react-router-dom";
+import "./CSS/styling.css";
 
 export default function CountryCard(props) {
   const {
     addCountryToFavorites,
     removeCountryFromFavorites,
-    countries,
-    setCountries,
   } = React.useContext(CountriesContext);
 
   function numberWithSeparators(number) {
