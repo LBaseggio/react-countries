@@ -187,7 +187,7 @@ body {
 /* //////////////////////////////    CARDS GRID    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .cards-container {
-  margin: 3vh 1vw 3vh 1vw;
+  margin: 3vh 2vw 3vh 2vw;
 }
 
 .cards-grid {
@@ -563,5 +563,56 @@ body {
     margin: 210px 0px 10px 00px;
   }
 }
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 380px) {
+
+
+  #navbar-text {
+    font-size: 22px;
+  }
+
+    .filter-by-region-select,
+    .choose-country-select {
+      padding: 4px 6px;
+      margin: 2px 4px;
+    }
+
+    .search-country {
+      padding: 5px 10px;
+      margin: 2px 4px;
+    }
+
+    #button-reset,
+    #button-big-population,
+    #button-small-population,
+    #button-big-area,
+    #button-small-area {
+      padding: 5px 4px;
+      margin: 2px 2px;
+    }
+
+    .favorite-list-text {
+      margin: 200px 0px 20px 0px;
+    }
+
+    #cards-grid-with-favorite {
+      margin: 220px 0px 0px 0px;
+    }
+
+    #cards-grid-without-favorite {
+      margin: 210px 0px 10px 00px;
+    }
+  }
+  .buttons-container {
+    margin: 10px;
+  }
+
+  #button-card {
+    margin: 0 10px;
+  }
+
+
 }
 
