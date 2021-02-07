@@ -11,9 +11,9 @@ export default function App() {
         <BrowserRouter>
           <NavBar />
           <Switch>
-            <Route exact path="/" component={CountryList} />
-            <Route path="/:name" component={CountryDetails} />
-            <Redirect to="/" />
+            <Route exact path="/countries" component={CountryList} />
+            <Route path="/countries/:name" component={CountryDetails} />
+            <Redirect to="/countries" />
           </Switch>
         </BrowserRouter>
       </CountriesContextProvider>

@@ -1,0 +1,110 @@
+
+/* //////////////////////////////////////////   CARD DETAILS   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+#grand-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  padding: 3%;
+  font-family: "Nunito", sans-serif;
+}
+
+
+.grand-card-details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  min-width: 60vw;
+  max-width: 90vw;
+  box-sizing: border-box;
+  margin: 180px 0px 0px 0px;
+  align-self: center;
+  justify-items: center;
+}
+
+
+
+#flag-details-container {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+
+#flag-details-container>img {
+  object-fit: cover;
+  width: 100%;
+  height:fit-content;
+  vertical-align: center;
+  box-shadow: 2px 2px 5px 1px #66666670;
+
+}
+
+
+#card-details-container {
+  box-sizing: border-box;
+  display: grid;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 3%;
+  border-radius: 10px;
+  background-color: #828282;
+  background-image: url("../../Assets/subtlenet.png");
+  box-shadow: 3px 3px 33px 13px rgba(34, 34, 34, 0.2);
+  position: relative;
+}
+
+
+
+#card-details-container>h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 20px 0px 20px 20px;
+}
+
+
+#card-details-container>h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 4px 0px 6px 20px;
+  line-height: 1.3rem;
+}
+
+.map-translations,
+.map-currencies,
+.map-languages,
+.map-timezones,
+.map-borders{
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3rem;
+  margin: 4px;
+}
+
+#button-return{
+  margin: 15px 15px 15px 15px;
+  width: 100px;
+  padding: 7px 20px 7px 20px;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: 1px 1px 1px 1px #66666670;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+.grand-card-details-container {
+  display: block;
+  min-width: 50vw;
+  max-width: 60vw;
+  margin: 150px 0px 0px 0px;
+  align-self: center;
+  justify-items: center;
+}
+
+#flag-details-container>img {
+margin: 0 0 30px 0;}
+}

@@ -2,7 +2,7 @@ body {
   overflow-wrap: overflow-wrap;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #696969;
+  background-color: #555555;
   background-image: url("../../Assets/bright-squares.png");
 }
 
@@ -271,81 +271,6 @@ body {
   margin-bottom: 0;
 }
 
-/* //////////////////////////////////////////   CARD DETAILS   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-#grand-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  justify-self: center;
-  border: solid 10px rgb(0, 81, 255);
-}
-
-
-.grand-card-details-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 120px;
-    width: 70vw;
-    box-sizing: border-box;
-    margin: 200px 0px 0px 0px;
-    align-self: center;
-    justify-items: center;
-    border: solid 4px rgb(236, 13, 13);
-}
-
-#flag-details-container {
-  border: solid 3px rgb(183, 0, 255);
-}
-
-.card-details-container {
-  box-sizing: border-box;
-  display: grid;
-  /* justify-content: flex-start; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* position: relative; */
-  /* width: 1000px; */
-  /* min-height: 600px; */
-  /* height: fit-content; */
-  padding: 0 0 65px 0;
-  border-radius: 20px;
-  font-family: "Nunito", sans-serif;
-  box-shadow: 3px 3px 33px 13px rgba(34, 34, 34, 0.404);
-  background-color: #72727252;
-  background-image: url("../../Assets/brushed-alum.png");
-  border: solid 4px rgb(255, 153, 0);
-}
-
-#flag-details-container > img {
-  object-fit: cover;
-  vertical-align: top;
-  width: 100%;
-  margin: 0px 0px 15px 0px;
-  box-shadow: 2px 2px 5px 1px #66666670;
-  /* border-radius: 5px 5px 0px 0px; */
-  border: solid 4px rgb(251, 255, 0);
-
-}
-#buttons-details-container {
-  border: solid 4px rgb(21, 255, 0);
-
-}
-#card-container > h2 {
-  font-size: 36px;
-  font-weight: 600;
-  margin: 10px 0px 6px 20px;
-  border: solid 4px rgb(0, 238, 255);
-
-}
-
-#card-container > h5 {
-  font-size: 20px;
-  font-weight: 500;
-  margin: 4px 0px 6px 20px;
-  border: solid 4px rgb(0, 68, 255);
-  
-}
 
 /* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 /* //////////////////////////////////////////   MEDIA QUERIES   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

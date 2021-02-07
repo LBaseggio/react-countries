@@ -51,7 +51,7 @@ export default function CountryCard(props) {
         ) : null}
         <button id="button-card" type="button">
           <Link
-            to={`/${props.name}`}
+            to={`/countries/${props.name}`}
             style={{ textDecoration: "none", color: "black" }}
           >
             Details
