@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 import "./CSS/stylingDetails.css";
 
 export default function CountryDetails(props) {
-  const {
-    countries,
-    removeCountryFromFavorites,
-    addCountryToFavorites,
-  } = React.useContext(CountriesContext);
+  const { countries } = React.useContext(CountriesContext);
 
   function numberWithSeparators(number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
