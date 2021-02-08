@@ -10,6 +10,7 @@ export default function CountryDetails(props) {
     // addCountryToFavorites,
   } = React.useContext(CountriesContext);
 
+
   function numberWithSeparators(number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
   }
