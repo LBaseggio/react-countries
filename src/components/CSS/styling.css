@@ -1,9 +1,9 @@
 body {
   overflow-wrap: overflow-wrap;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto; 
   background-color: #555555;
-  background-image: url("../../Assets/bright-squares.png");
+  background-image: url("../../Assets/black-linen.png");
 }
 
 /* //////////////////////////////    NAVBAR    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -20,8 +20,8 @@ body {
   z-index: 2;
   margin: 0;
   font-family: "Nunito", sans-serif;
-  background-color: hsla(0, 0%, 55%, 0.925);
-  background-image: url("../../Assets/bright-squares.png");
+  background-color: hsla(0, 0%, 21%, 0.95);
+  background-image: url("../../Assets/smooth-wall-dark.png");
 }
 
 #navbar-text {
@@ -32,7 +32,7 @@ body {
   text-align: center;
   font-family: "Permanent Marker", cursive;
   text-shadow: 1px 1px 1px #3c3c3c;
-  color: rgb(227, 227, 227);
+  color: #e3e3e3;
 }
 
 .globe {
@@ -58,8 +58,8 @@ body {
   justify-self: center;
   flex-wrap: wrap;
   margin: 0px 0px 90px 0px;
-  background-color: hsla(0, 0%, 55%, 0.925);
-  background-image: url("../../Assets/bright-squares.png");
+  background-color: hsla(0, 0%, 21%, 0.95);
+  background-image: url("../../Assets/smooth-wall-dark.png");
 }
 
 .flex-container {
@@ -257,12 +257,12 @@ body {
   position: absolute;
   align-self: center;
   bottom: 0px;
-  margin: 15px;
+  margin: 5% 0%;
 }
 
 #button-card {
   padding: 7px 20px;
-  margin: 0 15px;
+  margin: 0 10px;
   border-radius: 7px;
   box-shadow: 1px 1px 1px 1px #66666670;
 }
