@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import "./CSS/stylingDetails.css";
 
 export default function CountryDetails(props) {
-  const { countries } = React.useContext(CountriesContext);
+  const {
+    countries,
+    // removeCountryFromFavorites,
+    // addCountryToFavorites,
+  } = React.useContext(CountriesContext);
+
 
   function numberWithSeparators(number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
@@ -31,13 +36,14 @@ export default function CountryDetails(props) {
                   {item.nativeName}
                 </h5>
 
-                <h5>
+                <h5 className="map-translations">
                   <b>Translations:</b>
-                  <span className="map-translations">
-                    {Object.keys(item.translations).map(
-                      (element) => `${element} , ${item.translations[element]}`
-                    )}
-                  </span>
+                  <div>
+                    {Object.keys(item.translations).map((element) => (
+                      <p className="map-translations-items">{`${element}:  ${item.translations[element]}`}</p>
+                    ))}
+                  </div>
+                  {console.log(item.translations)}
                 </h5>
 
                 <h5>

@@ -24,13 +24,11 @@
 }
 
 
-
 #flag-details-container {
   display: flex;
   justify-content: center;
   justify-self: center;
 }
-
 
 #flag-details-container>img {
   object-fit: cover;
@@ -38,7 +36,6 @@
   height:fit-content;
   vertical-align: center;
   box-shadow: 2px 2px 5px 1px #66666670;
-
 }
 
 
@@ -56,7 +53,6 @@
 }
 
 
-
 #card-details-container>h2 {
   font-size: 28px;
   font-weight: 800;
@@ -71,7 +67,6 @@
   line-height: 1.3rem;
 }
 
-.map-translations,
 .map-currencies,
 .map-languages,
 .map-timezones,
@@ -84,6 +79,16 @@
   margin: 4px;
 }
 
+.map-translations{
+  display: block;
+  padding: 5px;
+}
+
+.map-translations-items{
+  margin: 0 0 0 40px;
+}
+
+
 #button-return{
   margin: 15px 15px 15px 15px;
   width: 100px;
@@ -94,13 +99,12 @@
 }
 
 
-
 @media only screen and (max-width: 1200px) {
 .grand-card-details-container {
   display: block;
-  min-width: 50vw;
-  max-width: 60vw;
-  margin: 150px 0px 0px 0px;
+  min-width: 60vw;
+  max-width: 70vw;
+  margin: 120px 0px 0px 0px;
   align-self: center;
   justify-items: center;
 }
